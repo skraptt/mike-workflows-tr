@@ -1,6 +1,6 @@
 # mikeTR İş Akışları
 
-[mikeTR](https://github.com/skraptt/mikeTR) için Türkçe ve Türk hukukuna uyarlanmış iş akışı kataloğu. Open Legal Products'ın [mike-legal-workflows](https://github.com/open-legal-products/mike-legal-workflows) deposunun (MIT) çatalıdır.
+[mikeTR](https://github.com/skraptt/mikeTR) için Türkçe ve Türk hukukuna uyarlanmış iş akışı kataloğu. Open Legal Products'ın [mike-workflows](https://github.com/Open-Legal-Products/mike-workflows) deposunun (MIT) çatalıdır.
 
 - Genel olarak kullanılabilen 15 iş akışı Türkçeye çevrildi ve Türk hukukuna (TBK, TTK, HMK, KVKK) uyarlandı: 11 asistan iş akışı ve 4 tablo incelemesi.
 - Yabancı hukuka özgü iş akışları ve paketler (GDPR, PIPL, Fin hukuku, Singapur/Avustralya vb.) katalogdan çıkarıldı.
