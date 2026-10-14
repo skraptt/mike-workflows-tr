@@ -29,3 +29,7 @@ license or notice applies.
 
 Do not contribute material with unclear ownership, missing license terms, or
 provenance that cannot be verified.
+
+## mikeTR Uyarlaması
+
+Bu depo Open Legal Products'ın `mike-legal-workflows` deposundan (MIT) çatallanmıştır. Çevrilen ve uyarlanan iş akışlarının `author` alanında özgün yazar korunmuş ve "Türkçe uyarlama: mikeTR" notu eklenmiştir; sürüm numaralarına `-tr.N` eki verilmiştir. Değişiklikler: metinlerin Türkçeye çevrilmesi, yabancı hukuk atıflarının Türk hukuku karşılıklarıyla değiştirilmesi ve yabancı hukuka özgü iş akışlarının çıkarılması. `turk-hukuku-pack` mikeTR'nin özgün çalışmasıdır (MIT).

@@ -1,94 +1,82 @@
 ---
 name: "proofread"
-description: "Review the uploaded document for drafting quality, internal consistency, and mechanical errors."
+description: "Yüklenen belgeyi yazım kalitesi, iç tutarlılık ve biçim hataları bakımından inceler."
 license: "MIT"
 metadata:
-  version: "1.1.0"
-  author: "Anna Guo"
-  language: "English"
-  mike-display-name: "Proofread"
+  version: "1.1.0-tr.1"
+  author: "Anna Guo; Türkçe uyarlama: mikeTR"
+  language: "Turkish"
+  mike-display-name: "Yazım ve Tutarlılık Denetimi"
   mike-type: "assistant"
   mike-availability: "system"
-  practice: "General Transactions"
-  jurisdictions: "General"
+  practice: "Genel Sözleşmeler"
+  jurisdictions: "Türkiye"
 ---
-# Proofread
 
-## Instructions
+# Yazım ve Tutarlılık Denetimi
 
-Review the uploaded document for drafting quality, internal consistency, and mechanical errors. Focus on issues that a lawyer or reviewer should correct before the document is circulated, signed, or filed.
+## Talimatlar
 
-Treat this as a forensic audit, not a quick read-through. Inconsistent numbering, stale cross-references, dead definitions, future-dated metadata, and hidden hyperlinks do not jump out on a single read. They require deliberate, structured passes with different lenses. **The standard:** when you finish, a second reviewer should find nothing material that you missed.
+Yüklenen belgeyi yazım kalitesi, iç tutarlılık ve biçim hataları bakımından incele. Belge dolaşıma sokulmadan, imzalanmadan ya da mahkemeye sunulmadan önce bir hukukçunun düzeltmesi gereken sorunlara odaklan.
 
-## Working Principles
+Bunu hızlı bir okuma değil, titiz bir denetim olarak ele al. Tutarsız numaralandırma, eskimiş atıflar, kullanılmayan tanımlar, ileri tarihli üst veriler ve gizli bağlantılar tek okumada göze çarpmaz; farklı açılardan yapılan ayrı geçişler gerektirir. **Ölçüt:** bitirdiğinde ikinci bir inceleyicinin kaçırdığın önemli bir şey bulmaması.
 
-- **Inspect the artefact, not just the text.** For document files, inspect the underlying structure—such as hyperlinks and their targets, fonts, styles, comments, and tracked changes—in addition to the rendered text when the available tools support it. Rendered text can hide defects such as an embedded `mailto:` target pointing to the wrong domain, an inconsistent font run, or an unaccepted revision. If only plain text or pasted content is available, say so explicitly and note that hyperlink, font, revision, comment, and metadata checks could not be performed.
-- **Build reference maps first, then audit.** You cannot spot a stale cross-reference without a section map or a dead definition without a defined-terms map. Build these before reviewing individual defects.
-- **Use separate passes, each with one lens.** Trying to catch everything in one read misses issues. Treat each review category below as its own pass.
-- **Flag, do not silently fix.** Surface defects so the reviewer can decide. Do not rewrite the document.
-- **Separate errors from style preferences.** A genuine error is unambiguously wrong, such as a misspelling, a reference to a clause that does not exist, or an incorrect date. A style choice, such as use of the Oxford comma or UK rather than US spelling, is only an issue when it is internally inconsistent. Overflagging undermines the credibility of the review.
+## Çalışma İlkeleri
 
-## Step 1: Extract and Inspect
+- **Yalnızca metni değil, dosyayı incele.** Araçlar elveriyorsa belge dosyalarında görünen metnin yanında bağlantıları ve hedeflerini, yazı tiplerini, stilleri, yorumları ve izlenen değişiklikleri de incele. Yalnızca düz metin varsa bunu açıkça belirt ve bağlantı, yazı tipi, revizyon, yorum ve üst veri kontrollerinin yapılamadığını not et.
+- **Önce haritaları çıkar, sonra denetle.** Bölüm haritası olmadan eskimiş bir atfı, tanımlar haritası olmadan kullanılmayan bir tanımı yakalayamazsın.
+- **Her geçişte tek bir açıdan bak.** Aşağıdaki her kategoriyi ayrı bir geçiş olarak ele al.
+- **Sessizce düzeltme, işaretle.** Kararı inceleyene bırak; belgeyi yeniden yazma.
+- **Hatayı üslup tercihinden ayır.** Yazım yanlışı, var olmayan bir maddeye atıf ya da yanlış tarih gerçek hatadır. Üslup tercihi ancak kendi içinde tutarsızsa sorundur.
 
-For document files, inspect both the rendered content and the underlying structure when supported, including paragraph text, hyperlink targets, font runs, paragraph styles, comments, and tracked changes. For PDFs, inspect the extracted text together with the rendered pages and document structure. For cloud-hosted documents, inspect the rendered document and its layout. If the file itself is unavailable and only text is in context, proceed but state that the metadata and visual-layout passes could not be completed.
+## 1. Adım: Çıkar ve İncele
 
-## Step 2: Build Reference Maps
+Belge dosyalarında görünen içeriği ve olanaklı olduğunda alttaki yapıyı (paragraf metni, bağlantı hedefleri, yazı tipleri, stiller, yorumlar, izlenen değişiklikler) incele. PDF'lerde çıkarılan metni sayfa görüntüsü ve belge yapısıyla birlikte incele. Dosyanın kendisi yoksa ve yalnızca metin varsa devam et ama üst veri ve görsel düzen geçişlerinin yapılamadığını belirt.
 
-Before reviewing individual defects, build three maps:
+## 2. Adım: Haritaları Çıkar
 
-- **Entity map** — every name used for each party, including exact capitalization, punctuation, and spelling, together with where each form appears. Multiple variants of one company name may indicate an error.
-- **Section and numbering map** — every heading and its number in order. Use it to identify missing numbers, jumps, duplicates, and mixed hierarchy levels. If a table of contents is present, map it separately for comparison.
-- **Defined-terms map** — every term introduced as a definition, where it is defined, and each later use. Use it to identify inconsistent casing, capitalized but undefined terms, and dead definitions that are defined but never used.
+- **Taraf haritası:** Her taraf için kullanılan bütün adlar; büyük-küçük harf, noktalama ve yazılışıyla birlikte, nerede geçtiğiyle. Aynı şirketin unvanının farklı yazılışları hata işareti olabilir (ör. "A.Ş." ile "Anonim Şirketi", eksik "Ticaret" ibaresi).
+- **Bölüm ve numara haritası:** Her başlık ve numarası, sırayla. Eksik, atlanan, tekrarlanan numaraları ve karışık hiyerarşiyi bul. İçindekiler varsa ayrıca karşılaştır.
+- **Tanımlar haritası:** Tanımlanan her terim, nerede tanımlandığı ve sonraki kullanımları. Tutarsız yazımı, büyük harfle yazılıp tanımlanmayan terimleri ve hiç kullanılmayan tanımları bul.
 
-## Step 3: Review Categories
+## 3. Adım: Denetim Kategorileri
 
-Run each category as a separate pass. Apply the **paste-fingerprint heuristic** when multiple anomalies cluster in the same paragraph or block. For example, a font variance and a defective hyperlink together may indicate that text was pasted from an external source. Widen the review across that block for related defects such as wrong names, an incorrect jurisdiction, inconsistent quotation marks, or stray spaces. Treat the cluster as a reason for closer inspection, not conclusive proof of its origin, and report related defects together where that is clearer.
-
-| Category | What to Check | Example |
+| Kategori | Neye bakılır | Örnek |
 | --- | --- | --- |
-| Definitions | Defined terms used consistently, including case; all capitalized defined terms actually defined; no duplicate, conflicting, or circular definitions; dead definitions identified; and defined terms matching the operative provisions. | "Financial Information" is defined once but never used again → delete it or use it where intended. |
-| Cross-References | Every clause, section, schedule, exhibit, annex, and document reference exists, points to the correct place, uses correct numbering, and remains accurate after apparent drafting changes. | The preamble says "Terms of Use" while clause 4 says "Terms of Service" for the same document → confirm and use one title consistently. |
-| Internal Consistency | Terms, sections, dates, parties, amounts, thresholds, notice periods, conditions, remedies, or obligations that conflict or create inconsistent outcomes, including scope conflicts where a term includes Affiliates in one place but excludes them elsewhere. | "Confidential Information" includes Affiliates in clause 1 but excludes them in clause 9 → reconcile the scope. |
-| Parties and Entity Names | Party names, entity suffixes, registration details, capacities, addresses, signatory names, and role labels used consistently; name variants differing by a letter, space, or capitalization; and legal-entity conflicts between the preamble and definitions. | "Acme Holdings, Inc." in the preamble but "Acme Holdings LLC" in the definitions → confirm the correct legal entity. |
-| Numbers, Dates, and Calculations | Monetary amounts, percentages, dates, deadlines, time periods, notice periods, interest rates, formulas, schedules, and words-versus-figures consistency; future-dated metadata that may be incorrect. | "Under the age of 16 (seventeen)" → the digit and word disagree; confirm the intended threshold. |
-| Grammar and Typos | Spelling, grammar, punctuation, missing words, articles or prepositions, duplicate words, repeated phrases, tense, subject-verb agreement, dangling modifiers, truncated or unfinished sentences, sentence fragments, missing possessives, and missing terminal punctuation. | "...such as a phone number or an)" → the sentence is truncated and the provision may be incomplete. |
-| Numbering | Clause, section, sub-clause, schedule, exhibit, and table numbering; skipped, duplicate, or out-of-sequence numbers; unnumbered headings that should be numbered; and mixed hierarchy markers within one list. If a table of contents is present, verify that numbers, headings, and hierarchy match it exactly. | Sections run from 5 to 7 with no section 6, or two clauses are both labelled (vii) → identify the missing or duplicate number. |
-| Formatting | Headings, list formatting, indentation, spacing, fonts, emphasis, table and schedule formatting, heading-case consistency, compound-word and hyphenation consistency; hyperlink targets that mismatch visible text; font variance from the body default; leftover comments or tracked changes; and whitespace anomalies. | Visible text says `privacy@acme.com` but the embedded `mailto:` target is `privacy@acme.com.ph` → correct the hidden target. |
+| Tanımlar | Tanımlı terimlerin tutarlı kullanımı; büyük harfle yazılan terimlerin tanımlı olması; çelişen ya da döngüsel tanımlar; kullanılmayan tanımlar. | "Gizli Bilgi" bir kez tanımlanmış ama hiç kullanılmamış → silin ya da amaçlanan yerde kullanın. |
+| Atıflar | Her madde, bent, ek ve belge atfı var olan ve doğru yeri gösteriyor mu; kanun maddesi atıfları doğru mu. | Madde 12'de "Madde 9.3'e göre" denmiş ama Madde 9'un alt bendi yok → atfı düzeltin. |
+| İç tutarlılık | Şartlar, tarihler, taraflar, tutarlar, eşikler, bildirim süreleri, yükümlülükler arasında çelişki. | Madde 4'te ihtar süresi 15 gün, Madde 11'de 30 gün → birini seçin. |
+| Taraflar ve unvanlar | Ticaret unvanları, MERSİS/vergi numaraları, adresler, imza yetkilileri ve sıfatlar tutarlı mı. | Girişte "ABC Yazılım A.Ş.", imza bloğunda "ABC Bilişim A.Ş." → doğru unvanı teyit edin. |
+| Sayılar, tarihler, hesaplar | Tutarlar, yüzdeler, tarihler, süreler, faiz oranları; rakam ile yazının uyumu; Türk usulü yazım (14.10.2026, 150.000,00 TL). | "Yüz bin (150.000) TL" → rakam ve yazı uyuşmuyor. |
+| Dil ve yazım | Yazım (TDK), dil bilgisi, noktalama, eksik ya da tekrarlanan kelimeler, yarım kalan cümleler, ek hataları ("-de/-da" ayrı yazımı). | "...telefon numarası ya da bir)" → cümle yarım kalmış. |
+| Numaralandırma | Madde, bent ve ek numaraları; atlanan, tekrarlanan ya da sırasız numaralar; içindekilerle uyum. | Madde 5'ten 7'ye geçilmiş, Madde 6 yok. |
+| Biçim | Başlıklar, listeler, girintiler, yazı tipleri, tablolar; görünen metinle uyuşmayan bağlantı hedefleri; kalmış yorumlar ve izlenen değişiklikler. | Görünen adres `bilgi@abc.com.tr`, bağlantı hedefi `bilgi@abc.com` → hedefi düzeltin. |
 
-## Severity Ratings
+## Önem Dereceleri
 
-- **Critical** — an inconsistency or drafting error that may materially change rights, obligations, parties, timing, or enforceability, such as the wrong legal entity, a hyperlink directing a legal notice to the wrong recipient, incorrect operative metadata, or numbering defects that break the cross-reference scheme. Do not downgrade an issue merely because the visible difference is small.
-- **High** — an error likely to create ambiguity, negotiation friction, or implementation risk, such as a truncated sentence, numerical conflict, material dead definition, or grammatical defect that changes meaning.
-- **Medium** — a proofreading or consistency issue that should be fixed but is unlikely to change the main legal effect.
-- **Low** — a minor typo, grammar, formatting, punctuation, or style issue.
+- **Kritik:** Hakları, yükümlülükleri, tarafları, süreleri ya da geçerliliği esaslı biçimde değiştirebilecek hata (yanlış tüzel kişi, bildirimin yanlış adrese gitmesi, atıf düzenini bozan numaralandırma).
+- **Yüksek:** Belirsizlik, müzakere sürtüşmesi ya da uygulama riski yaratması muhtemel hata (yarım cümle, sayısal çelişki, anlamı değiştiren dil bilgisi hatası).
+- **Orta:** Düzeltilmesi gereken ama asıl hukuki etkiyi değiştirmesi beklenmeyen tutarlılık sorunu.
+- **Düşük:** Küçük yazım, noktalama ya da biçim sorunu.
 
-Assign severity according to the likely consequence in the document under review, not merely the category of defect.
+## Çıktı
 
-## Deliverable
+Tam olarak şu sütunlardan oluşan kısa bir Markdown tablosu hazırla:
 
-Produce a concise Markdown table with exactly these columns:
+- Önem
+- Kategori
+- Yer
+- Sorun
+- Önerilen Düzeltme
 
-- Severity
-- Category
-- Location
-- Issue
-- Recommended Fix
+**Yer** sütununa bulunabilen en iyi madde, sayfa ya da paragraf atfını yaz. **Sorun** sütununda hatayı ve neden önemli olduğunu açıkla. **Önerilen Düzeltme** sütununda somut düzeltmeyi, gerekiyorsa kısa bir öneri metniyle ver; belgenin tamamını yeniden yazma. Tabloyu önem derecesine göre (Kritik önce) sırala.
 
-For each issue, give the best available clause, section, page, schedule, or paragraph reference in **Location**. If the location is unclear, describe where it appears as specifically as possible. In **Issue**, explain the defect and why it matters. In **Recommended Fix**, give a specific correction and include concise replacement wording where useful, but do not rewrite the whole document. Sort the table by severity, with Critical issues first.
+Tablodan sonra önce düzeltilmesi gereken iki ila beş noktayı listeleyen kısa bir **En Kritik Sorunlar** özeti ekle.
 
-After the table, add a short **Summary of most critical issues** listing the two to five items to fix first.
+## Hata Sayılmayanlar
 
-## Things That Are Not Errors
+Güvenilirliği korumak için şunları işaretleme: tutarlı kullanılan üslup tercihlerini, metin gerçekten anlaşılmaz değilse cümle uzunluğunu, yalnızca senin tercihin olmayan geçerli kelime seçimlerini ve bağlamda yeterince belirli olan üst numaralı madde atıflarını. Bir şeyin hata mı tercih mi olduğundan emin değilsen bu belirsizliği belirt.
 
-To keep findings credible, do not flag:
+## Sonuçlandırmadan Önce
 
-- consistent style choices you disagree with, such as the Oxford comma, US rather than UK spelling, or bullet rather than numbered lists, unless the usage is internally inconsistent;
-- sentence length or readability unless the text is actually unclear or ungrammatical;
-- valid word choices that are merely not your preference; or
-- a reference to a clause by its top-level number where that clause exists and is sufficiently specific in context.
-
-When uncertain whether something is an error or a style preference, identify that uncertainty rather than presenting the issue as definitively wrong.
-
-## Before Finalizing
-
-Confirm that you separately considered definitions, cross-references, numbering, formatting, parties and entities, numbers and dates, grammar, and internal consistency. If a table of contents is present, verify that its clause numbers and headings match the document. If you inspected the artifact, confirm that you completed the available metadata pass, including hyperlinks, fonts, comments, and tracked changes. If no material issues are found, provide a single table row stating so and note any review limitations, such as metadata not being inspected because only text was provided. Keep the response focused on actionable corrections.
+Tanımları, atıfları, numaralandırmayı, biçimi, tarafları, sayıları ve tarihleri, dili ve iç tutarlılığı ayrı ayrı ele aldığını teyit et. Önemli bir sorun yoksa bunu belirten tek satırlık bir tablo ver ve yalnızca metin sağlandığı için üst verinin incelenememesi gibi sınırlamaları not et.

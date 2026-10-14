@@ -1,62 +1,71 @@
 ---
 name: "employment-agreement-review"
-description: "Review the uploaded employment agreement and produce a comprehensive table-based legal review from the perspective of the party represented by the user/client."
+description: "Yüklenen iş sözleşmesini, kullanıcının temsil ettiği tarafın bakış açısından tabloya dayalı olarak inceler."
 license: "MIT"
 metadata:
-  version: "1.0.0"
-  author: "Open Legal Products"
-  language: "English"
-  mike-display-name: "Employment Agreement Review"
+  version: "1.0.0-tr.1"
+  author: "Open Legal Products; Türkçe uyarlama: mikeTR"
+  language: "Turkish"
+  mike-display-name: "İş Sözleşmesi İncelemesi"
   mike-type: "assistant"
   mike-availability: "system"
-  practice: "Employment"
-  jurisdictions: "General"
+  practice: "İş Hukuku"
+  jurisdictions: "Türkiye"
 ---
-# Employment Agreement Review
 
-## Instructions
+# İş Sözleşmesi İncelemesi
 
-Review the uploaded employment agreement and produce a comprehensive table-based legal review from the perspective of the party represented by the user/client. If the user has not already identified which party they represent, ask them to clarify that party before producing the review.
+## Talimatlar
 
-Once the represented party is clear, provide exactly one Markdown result table. Use one row for each material issue found in the agreement, guided by the review checklist below, and add a final row called **Overall Risk Rating**. The result table must have exactly these columns:
+Yüklenen iş sözleşmesini incele ve kullanıcının (müvekkilin) temsil ettiği tarafın bakış açısından tabloya dayalı kapsamlı bir hukuki inceleme hazırla. Kullanıcı hangi tarafı (işveren ya da işçi) temsil ettiğini belirtmediyse incelemeye başlamadan önce bunu sor.
 
-- Issue
-- Summary
-- Recommended Change
+Temsil edilen taraf belli olduğunda tam olarak bir Markdown sonuç tablosu ver. Aşağıdaki kontrol listesine dayanarak sözleşmede bulduğun her önemli sorun için bir satır kullan ve en sona **Genel Risk Değerlendirmesi** başlıklı bir satır ekle. Tablo tam olarak şu sütunlardan oluşmalıdır:
 
-Use these risk ratings inside the **Summary** column: Low means standard or minimal concern; Medium means a manageable negotiation concern; High means a material legal, commercial, operational, or enforceability concern requiring negotiation; Critical means a severe issue that may block signing unless resolved. Start each summary with the risk rating, e.g. "High - restrictive covenant scope is excessive".
+- Sorun
+- Özet
+- Önerilen Değişiklik
 
-The **Summary** column should include only the relevant points from the **General** checklist column and the party-specific checklist column for the represented party, together with clause references where available. Do not include issues that are adverse only to another party unless they also create risk for the represented party. The **Recommended Change** column must be drafted from the represented party's perspective. Also flag general drafting errors that may affect the represented party, including inconsistent defined terms, inconsistent entity names, cross-reference errors, numbering issues, duplicated provisions, missing schedules, and internal inconsistencies. Keep the response concise and avoid long prose outside the table.
+**Özet** sütununa şu risk derecelerinden biriyle başla: Düşük, olağan ya da önemsiz bir endişedir; Orta, yönetilebilir bir müzakere konusudur; Yüksek, müzakere gerektiren önemli bir hukuki, ticari, operasyonel ya da geçerlilik sorunudur; Kritik, çözülmezse imzayı engelleyebilecek ciddi bir sorundur. Örnek: "Yüksek - rekabet yasağının süresi ve yer sınırı belirsiz".
 
-## Result Table Format
+**Özet** sütununa yalnızca kontrol listesinin **Genel** sütunundan ve temsil edilen tarafın sütunundan ilgili noktaları, mümkün olduğunda madde atıflarıyla yaz. Yalnızca karşı tarafın aleyhine olan ve temsil edilen taraf için risk yaratmayan noktaları ekleme. **Önerilen Değişiklik** sütununu temsil edilen tarafın bakış açısından yaz. Temsil edilen tarafı etkileyebilecek genel yazım hatalarını da işaretle: tutarsız tanımlar ve unvanlar, atıf ve numaralandırma hataları, tekrarlanan hükümler, eksik ekler ve iç çelişkiler. Yanıtı kısa tut; tablo dışında uzun düz yazıdan kaçın.
 
-Use this result table structure. Cite the relevant clause, section, schedule, or page directly in the **Summary** and **Recommended Change** columns. The example rows are illustrative only; tailor the actual rows to the uploaded agreement and represented party.
+Bir sorun kanunun emredici bir hükmüne, kesin hükümsüzlüğe ya da genel işlem koşulları denetimine dayanıyorsa dayanak maddeyi atıfla göster ve maddeyi mevzuat arama aracıyla kontrol et.
 
-| Issue | Summary | Recommended Change |
+İş Kanunu, 1475 s. K. ve İş Mahkemeleri Kanunu mikeTR veritabanında yoktur. Bu kanunlara dayanan tespitleri doğrulanmamış olarak işaretle; TBK'nın hizmet sözleşmesi hükümlerini (TBK md. 393 vd.) ise mevzuat arama aracıyla kontrol et.
+
+## Sonuç Tablosu Biçimi
+
+Bu tablo yapısını kullan. İlgili madde, bent, ek ya da sayfayı doğrudan **Özet** ve **Önerilen Değişiklik** sütunlarında belirt. Örnek satırlar yalnızca açıklama içindir; gerçek satırları yüklenen sözleşmeye ve temsil edilen tarafa göre hazırla.
+
+| Sorun | Özet | Önerilen Değişiklik |
 | --- | --- | --- |
-| Restrictive Covenants | High - Clause [x] imposes a long non-compete with broad geographic scope. The general covenant position and the employee-specific checklist point indicate enforceability and mobility risk for the employee. | For the employee, reduce the duration, territory, and restricted activities to what is necessary for legitimate business protection. |
-| Drafting Consistency | Medium - Clauses [x] and [y] use inconsistent defined terms or party names. The general drafting point indicates ambiguity that may affect the represented party's rights or obligations. | For the represented party, align the defined terms, party names, numbering, and cross-references before signing. |
+| Rekabet yasağı | Yüksek - Madde [x] işçiye beş yıl süreyle Türkiye genelinde aynı sektörde çalışma yasağı getiriyor; TBK md. 444-445 uyarınca yasak kural olarak iki yılı aşamaz. | İşçi için yasağı en fazla bir yıl, belirli il ve doğrudan rakip firmalarla sınırlayın; yasak süresince bir karşılık ödenmesini önerin. |
+| Cezai şart | Kritik - Madde [x] yalnızca işçi için [tutar] cezai şart öngörüyor; TBK md. 420 uyarınca hizmet sözleşmelerine sadece işçi aleyhine konulan cezai şart geçersizdir. | İşveren için cezai şartı karşılıklı hâle getirin ya da kaldırıp zararın ispatına dayalı tazminata yer verin. |
 
-## Review Checklist
+## İnceleme Kontrol Listesi
 
-Use this checklist as guidance for what to review and flag. It is not the result-table template and should not be reproduced verbatim. For each checklist issue, consider both the **General** column and the party-specific column for the represented party (Employer or Employee).
+Her konu için **Genel** sütunundaki noktaları her zaman, taraf sütunlarından yalnızca temsil edilen tarafınkini uygula.
 
-| Issue | General | Employer | Employee |
+| Konu | Genel | Işveren | Işçi |
 | --- | --- | --- | --- |
-| Parties and Role | Identify employer and employee with correct legal names. Confirm job title, reporting line, work location, and employment type. Flag incorrect entities, unclear role scope, or terms creating unintended employment relationships. | | |
-| Start Date and Term | State commencement date, probation period, fixed term, renewal mechanics, and conditions precedent. | Flag unclear commencement mechanics or terms that limit employer flexibility during the probation period. | Flag long probation periods, unclear renewal mechanics, or employer-only extension rights. |
-| Duties | Summarize duties, working hours, exclusivity, travel requirements, and flexibility clauses. | Flag overly narrow duties that restrict operational flexibility or the employer's ability to change the role. | Flag open-ended duties, excessive hours, broad travel requirements, or unilateral employer change rights. |
-| Compensation | Identify salary, payment frequency, reviews, bonus, commission, allowances, and discretion. | Flag discretionary compensation arrangements that may create enforceable entitlement expectations. | Flag fully discretionary compensation, unclear bonus criteria, or missing payment timing. |
-| Benefits | Summarize pension, insurance, leave, expenses, equity incentives, and employer discretion. | Flag benefit commitments that may be difficult to modify or withdraw without breach. | Flag benefits that can be withdrawn without notice or that conflict with the offer letter. |
-| Holiday and Leave | State annual leave, sickness absence, statutory leave, notice requirements, and carry-over rules. | Flag carry-over obligations or leave accrual that creates significant financial liability. | Flag entitlements below statutory minimums, unclear carry-over rules, or inadequate sick pay. |
-| Policies and Handbook | Identify incorporated policies, contractual status, and amendment rights. | Flag policies incorporated as contractual that cannot be changed unilaterally without employee consent. | Flag policies incorporated as contractual while the employer retains unilateral amendment rights. |
-| Confidentiality | Summarize confidentiality obligations during and after employment. | Flag confidentiality obligations too narrow to protect business-critical information. | Flag overbroad confidential information definitions or indefinite restrictions beyond legitimate business interests. |
-| Intellectual Property | Identify ownership, assignment, inventions, works, moral rights waivers, and assistance obligations. | Flag gaps in IP assignment covering inventions or works made during employment or using company resources. | Flag assignment of unrelated personal inventions, works outside employment scope, or unpaid post-employment assistance obligations. |
-| Data Protection and Monitoring | Summarize monitoring, privacy, processing, and consent provisions. | Flag monitoring arrangements that may expose the employer to data protection liability. | Flag intrusive monitoring, blanket consent provisions, or missing privacy notice references. |
-| Conflicts and Outside Activities | Identify restrictions on outside work, directorships, investments, conflicts, and disclosure duties. | Flag insufficient restrictions on outside activities or conflicts that could harm business interests. | Flag broad bans on passive investments, restrictions on unrelated outside work, or disclosure obligations for non-conflicting activities. |
-| Termination | State notice periods, payment in lieu, garden leave, summary dismissal, severance, and survival terms. | Flag notice periods or severance obligations that unduly limit employer termination flexibility. | Flag one-sided notice rights, broad summary dismissal triggers, or unclear payment in lieu treatment. |
-| Restrictive Covenants | Summarize non-compete, non-solicit, non-dealing, non-poach, and confidentiality covenants. | Flag covenants too narrow in scope, too short in duration, or likely to be unenforceable. | Flag excessive duration, broad geographic scope, wide covered customers, or covenants that may be unenforceable restraints. |
-| Return of Property | Identify obligations to return devices, documents, data, confidential information, and property. | Flag unclear scope of return obligations or no mechanism to enforce retrieval of business property. | Flag no carve-out for personal materials or obligations that require returning statutory record retention copies. |
-| Governing Law and Dispute Resolution | State governing law, courts, tribunal forum, arbitration, and mandatory procedures. Flag unfamiliar law, unclear mandatory procedures, or arbitration clauses that may limit statutory rights. | | |
+| Taraflar ve sözleşme türü | Tarafları, işin tanımını ve sözleşmenin belirli ya da belirsiz süreli, tam ya da kısmi süreli olduğunu belirle. Belirli süreli sözleşmenin objektif koşullara dayanması gerektiğini (İş Kanunu md. 11, veritabanında yok) not et. |  |  |
+| Deneme süresi | Deneme süresini ve bu süre içindeki fesih koşullarını özetle. | Deneme süresinin olmamasını ya da çok kısa olmasını işaretle. | Kanuni üst sınırı aşan deneme süresini işaretle (İş Kanunu md. 15, doğrulanmamış). |
+| Ücret ve yan haklar | Ücreti, ödeme zamanını, prim, ikramiye, kâra katılma ve yan hakları belirt (TBK md. 401, 403). | Kazanılmış hak doğurabilecek belirsiz prim taahhütlerini işaretle. | Ödenme koşulları işverenin takdirine bırakılan primleri ve ücretin ödeneceği tarihin belirsizliğini işaretle. |
+| Çalışma süresi ve fazla çalışma | Çalışma süresini ve fazla çalışma ücretinin ücrete dahil sayılıp sayılmadığını belirt. | Fazla çalışmanın ücrete dahil sayılmasının yıllık sınırlarını aşmasını işaretle (Yargıtay içtihadına bak). | Fazla çalışmanın karşılıksız bırakılmasını işaretle. |
+| Görev yeri ve görev değişikliği | Görev yerini ve işverenin görev ya da yer değiştirme yetkisini özetle. | Gerekli esnekliğin olmamasını işaretle. | Çalışma koşullarında esaslı değişikliğe sınırsız yetki veren hükümleri işaretle (İş Kanunu md. 22, doğrulanmamış). |
+| Sadakat ve gizlilik | İşçinin özen ve sadakat borcunu ve gizlilik yükümlülüklerini özetle (TBK md. 396). | Ticari sırları korumayan zayıf gizlilik hükmünü işaretle. | Süresiz ve belirsiz kapsamlı gizlilik yükümlülüklerini işaretle. |
+| Rekabet yasağı | Rekabet yasağının yazılı olup olmadığını, yer, zaman ve iş türü bakımından sınırlarını belirle. Yasak kural olarak iki yılı aşamaz ve işçinin ekonomik geleceğini hakkaniyete aykırı biçimde tehlikeye düşüremez (TBK md. 444-447). | Sınırları belirsiz olduğu için hâkimce daraltılabilecek ya da geçersiz sayılabilecek yasağı işaretle. | İki yılı aşan, geniş coğrafi kapsamlı ya da karşılıksız rekabet yasağını işaretle. |
+| Cezai şart | Cezai şartları belirle. İşçi aleyhine tek taraflı konulan cezai şart geçersizdir (TBK md. 420). | Geçersizlik riski taşıyan tek taraflı cezai şartı işaretle. | İşçi aleyhine tek taraflı cezai şartı ve aşırı yüksek tutarları işaretle. |
+| Eğitim gideri ve iade | İşverenin karşıladığı eğitim giderlerinin iadesine ilişkin hükümleri özetle. | İade koşullarının belirsizliğini işaretle. | Hizmet süresiyle orantılı azalmayan iade yükümlülüğünü işaretle. |
+| Fesih ve ihbar | Fesih usulünü, ihbar sürelerini, haklı nedenleri ve iş güvencesi kapsamını belirt; kıdem ve ihbar tazminatı hesaplamasını etkileyen hükümleri özetle (İş Kanunu ve 1475 s. K. md. 14, doğrulanmamış). | İhbar süresini kısaltan ya da haklı nedenleri belirsiz bırakan hükümleri işaretle. | Kanuni asgarinin altında ihbar süresini ve tazminat haklarından feragat ifadelerini işaretle. |
+| Kişisel veriler | Aydınlatma yükümlülüğünü (KVKK md. 10) ve özel nitelikli verilerin (sağlık raporu, biyometrik veri) işlenmesini değerlendir (KVKK md. 6). | Aydınlatma metninin ve işleme şartlarının eksikliğini işaretle. | Sözleşmeye gömülü genel açık rıza ifadelerini işaretle. |
+| Uyuşmazlık çözümü | Yetkili mahkemeyi ve arabuluculuk şartını belirt; iş uyuşmazlıklarında dava şartı arabuluculuğu not et (7036 s. İş Mahkemeleri Kanunu, veritabanında yok). |  |  |
 
-Deliver the review inline in your chat response. Do not generate a downloadable Word document unless the user explicitly asks for one.
+İncelemeyi sohbette, satır içinde ver. Kullanıcı açıkça istemedikçe indirilebilir bir Word belgesi oluşturma.
+
+## Türk hukuku
+
+- Belgeyi Türk hukukuna göre değerlendir. Uygulanacak hukuk başka bir ülkenin hukukuysa bunu belirt ve Türk hukukuna göre yaptığın tespitleri bununla sınırlı tut.
+- Bir değerlendirme kanun hükmüne dayanıyorsa ilgili maddeyi mevzuat arama aracıyla bul, oku ve atıf yap (ör. "TBK md. 27"). Madde numarasını hafızadan yazma.
+- Yerleşik içtihat sonucu değiştirebilecekse içtihat arama aracıyla Yargıtay kararlarını bul; dayanmadan önce kararı oku ve künyeyi sonuçtan aktar.
+- Veritabanında olmayan bir mevzuat gerekiyorsa (ör. İş Kanunu, İcra ve İflas Kanunu, MÖHUK) bunu açıkça söyle ve o kısmı doğrulanmamış olarak işaretle.

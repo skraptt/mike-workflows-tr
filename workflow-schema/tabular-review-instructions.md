@@ -1,16 +1,16 @@
-# Standard Tabular Review Instructions
+# Standart Tablo İncelemesi Talimatları
 
-Every tabular review `SKILL.md` should include the following baseline
-instructions. A workflow may add subject-specific guidance where needed.
+Her tablo incelemesi `SKILL.md` dosyası aşağıdaki temel talimatları içermelidir.
+Bir iş akışı gerektiğinde konuya özgü ek yönlendirmeler ekleyebilir.
 
 ```markdown
-## Instructions
+## Talimatlar
 
-- Apply each column prompt in `table-columns.yaml` to each document independently.
-- Extract only information supported by the document text.
-- Include clause references, section names, dates, amounts, party names, and defined terms where available.
-- If responsive information is not found, return an empty value or a concise "Not found" response.
-- Keep cell outputs concise while including enough context to make each extracted value useful.
-- Do not invent citations, facts, parties, dates, rights, obligations, or financial consequences.
-- Render the completed results as an exportable Excel (`.xlsx`) file. If Excel output is not possible, render the results as a Markdown table.
+- `table-columns.yaml` dosyasındaki her sütun sorusunu her belgeye ayrı ayrı uygula.
+- Yalnızca belge metninin desteklediği bilgiyi çıkar.
+- Mümkün olduğunda madde atıflarını, bölüm adlarını, tarihleri, tutarları, taraf adlarını ve tanımlı terimleri ekle.
+- Yanıt verecek bilgi bulunamazsa boş bırak ya da kısaca "Bulunamadı" yaz.
+- Hücreleri kısa tut ama çıkarılan bilginin işe yarar olması için yeterli bağlam ver.
+- Atıf, olgu, taraf, tarih, hak, yükümlülük ya da mali sonuç uydurma.
+- Tamamlanan sonuçları dışa aktarılabilir bir Excel (`.xlsx`) dosyası olarak ver. Excel çıktısı mümkün değilse sonuçları Markdown tablosu olarak ver.
 ```

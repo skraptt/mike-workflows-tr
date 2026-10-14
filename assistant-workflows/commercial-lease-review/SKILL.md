@@ -1,64 +1,69 @@
 ---
 name: "commercial-lease-review"
-description: "Review the uploaded commercial lease and produce a comprehensive table-based legal review from the perspective of the party represented by the user/client."
+description: "Yüklenen işyeri kira sözleşmesini, kullanıcının temsil ettiği tarafın bakış açısından tabloya dayalı olarak inceler."
 license: "MIT"
 metadata:
-  version: "1.0.0"
-  author: "Open Legal Products"
-  language: "English"
-  mike-display-name: "Commercial Lease Review"
+  version: "1.0.0-tr.1"
+  author: "Open Legal Products; Türkçe uyarlama: mikeTR"
+  language: "Turkish"
+  mike-display-name: "İşyeri Kira Sözleşmesi İncelemesi"
   mike-type: "assistant"
   mike-availability: "system"
-  practice: "Real Estate"
-  jurisdictions: "General"
+  practice: "Gayrimenkul"
+  jurisdictions: "Türkiye"
 ---
-# Commercial Lease Review
 
-## Instructions
+# İşyeri Kira Sözleşmesi İncelemesi
 
-Review the uploaded commercial lease and produce a comprehensive table-based legal review from the perspective of the party represented by the user/client. If the user has not already identified which party they represent, ask them to clarify that party before producing the review.
+## Talimatlar
 
-Once the represented party is clear, provide exactly one Markdown result table. Use one row for each material issue found in the agreement, guided by the review checklist below, and add a final row called **Overall Risk Rating**. The result table must have exactly these columns:
+Yüklenen işyeri kira sözleşmesini incele ve kullanıcının (müvekkilin) temsil ettiği tarafın bakış açısından tabloya dayalı kapsamlı bir hukuki inceleme hazırla. Kullanıcı hangi tarafı (kiraya veren ya da kiracı) temsil ettiğini belirtmediyse incelemeye başlamadan önce bunu sor.
 
-- Issue
-- Summary
-- Recommended Change
+Temsil edilen taraf belli olduğunda tam olarak bir Markdown sonuç tablosu ver. Aşağıdaki kontrol listesine dayanarak sözleşmede bulduğun her önemli sorun için bir satır kullan ve en sona **Genel Risk Değerlendirmesi** başlıklı bir satır ekle. Tablo tam olarak şu sütunlardan oluşmalıdır:
 
-Use these risk ratings inside the **Summary** column: Low means standard or minimal concern; Medium means a manageable negotiation concern; High means a material legal, commercial, operational, or enforceability concern requiring negotiation; Critical means a severe issue that may block signing unless resolved. Start each summary with the risk rating, e.g. "High — reinstatement obligation is uncapped".
+- Sorun
+- Özet
+- Önerilen Değişiklik
 
-The **Summary** column should include only the relevant points from the **General** checklist column and the party-specific checklist column for the represented party, together with clause references where available. Do not include issues that are adverse only to the other party unless they also create risk for the represented party. The **Recommended Change** column must be drafted from the represented party's perspective. Also flag general drafting errors that may affect the represented party, including inconsistent defined terms, inconsistent entity names, cross-reference errors, numbering issues, duplicated provisions, missing schedules, and internal inconsistencies. Keep the response concise and avoid long prose outside the table.
+**Özet** sütununa şu risk derecelerinden biriyle başla: Düşük, olağan ya da önemsiz bir endişedir; Orta, yönetilebilir bir müzakere konusudur; Yüksek, müzakere gerektiren önemli bir hukuki, ticari, operasyonel ya da geçerlilik sorunudur; Kritik, çözülmezse imzayı engelleyebilecek ciddi bir sorundur. Örnek: "Yüksek - rekabet yasağının süresi ve yer sınırı belirsiz".
 
-## Result Table Format
+**Özet** sütununa yalnızca kontrol listesinin **Genel** sütunundan ve temsil edilen tarafın sütunundan ilgili noktaları, mümkün olduğunda madde atıflarıyla yaz. Yalnızca karşı tarafın aleyhine olan ve temsil edilen taraf için risk yaratmayan noktaları ekleme. **Önerilen Değişiklik** sütununu temsil edilen tarafın bakış açısından yaz. Temsil edilen tarafı etkileyebilecek genel yazım hatalarını da işaretle: tutarsız tanımlar ve unvanlar, atıf ve numaralandırma hataları, tekrarlanan hükümler, eksik ekler ve iç çelişkiler. Yanıtı kısa tut; tablo dışında uzun düz yazıdan kaçın.
 
-Use this result table structure. Cite the relevant clause, section, schedule, or page directly in the **Summary** and **Recommended Change** columns. The example rows are illustrative only; tailor the actual rows to the uploaded agreement and represented party.
+Bir sorun kanunun emredici bir hükmüne, kesin hükümsüzlüğe ya da genel işlem koşulları denetimine dayanıyorsa dayanak maddeyi atıfla göster ve maddeyi mevzuat arama aracıyla kontrol et.
 
-| Issue | Summary | Recommended Change |
+## Sonuç Tablosu Biçimi
+
+Bu tablo yapısını kullan. İlgili madde, bent, ek ya da sayfayı doğrudan **Özet** ve **Önerilen Değişiklik** sütunlarında belirt. Örnek satırlar yalnızca açıklama içindir; gerçek satırları yüklenen sözleşmeye ve temsil edilen tarafa göre hazırla.
+
+| Sorun | Özet | Önerilen Değişiklik |
 | --- | --- | --- |
-| Break Rights | High — Clause [x] imposes vacant possession as a break condition with no cure period. The lessee-specific checklist point indicates the break is fragile and may be lost on a technicality. | For the lessee, remove vacant possession as a break condition or add a cure period and express the condition narrowly. |
-| Drafting Consistency | Medium — Clauses [x] and [y] use inconsistent defined terms for the premises. The general drafting point indicates ambiguity that may affect the represented party's rights. | For the represented party, align defined terms, premises description, and cross-references before signing. |
+| Kira artışı | Yüksek - Madde [x] her yıl %40 sabit artış öngörüyor; TBK md. 344 uyarınca artış bir önceki kira yılının TÜFE on iki aylık ortalamasını geçemez, aşan kısım geçersizdir. | Kiracı için artışı TÜFE on iki aylık ortalamasıyla sınırlayın; beşinci yıldan sonrası için hakkaniyet belirlemesini saklı tutun. |
+| Güvence | Orta - Madde [x] altı aylık kira tutarında nakit depozito istiyor; TBK md. 342 uyarınca güvence üç aylık kirayı aşamaz ve vadeli hesaba yatırılmalıdır. | Kiracı için güvenceyi üç aylık kirayla sınırlayın ve iki tarafın onayı olmadan çekilemeyecek bir vadeli hesaba yatırılmasını şart koşun. |
 
-## Review Checklist
+## İnceleme Kontrol Listesi
 
-Use this checklist as guidance for what to review and flag. It is not the result-table template and should not be reproduced verbatim. For each checklist issue, consider both the **General** column and the party-specific column for the represented party (Lessor or Lessee).
+Her konu için **Genel** sütunundaki noktaları her zaman, taraf sütunlarından yalnızca temsil edilen tarafınkini uygula.
 
-| Issue | General | Lessor | Lessee |
+| Konu | Genel | Kiraya veren | Kiracı |
 | --- | --- | --- | --- |
-| Parties and Premises | Identify landlord, tenant, guarantor, property, premises, title references, and included or excluded areas. Flag incorrect entities, missing plans, or premises description inconsistent with title. | | |
-| Term | State commencement, expiry, rent commencement, and any conditions precedent. | Flag renewal rights or holding-over provisions that limit the landlord's ability to recover the premises. | Flag uncertain commencement mechanics, no renewal clarity, or landlord-only discretion over start conditions. |
-| Rent and Payments | Confirm rent quantum, payment dates, and deposit mechanics. | Flag unclear payment mechanics, weak late-payment provisions, or rent-free periods exceeding what was agreed. | Flag unclear payment obligations, high default interest, or missing rent-free mechanics. |
-| Rent Review | Identify review dates, mechanism, assumptions, disregards, and dispute process. | Flag review mechanics too favorable to the tenant, downward review provisions, or no upward adjustment. | Flag upward-only review, no cap, aggressive assumptions, or tenant-unfriendly dispute process. |
-| Service Charge and Operating Costs | Identify tenant contribution scope, cap mechanics, audit rights, and reconciliation process. | Flag cost exclusions too broad, caps too low, or audit rights creating undue operational burden. | Flag broad pass-throughs, no cap, capital expenditure exposure, or weak audit rights. |
-| Use | State permitted use, prohibited uses, trading obligations, and change-of-use restrictions. | Flag permitted use too broad or absence of continuous trading obligation. | Flag narrow use restriction, continuous trading obligations, or restrictions inconsistent with operations. |
-| Repairs and Maintenance | Identify landlord and tenant repair obligations, condition standard, and schedule of condition. | Flag limited tenant repairing obligations, repair gaps, or yielding-up conditions below acceptable standard. | Flag full repairing obligation extending to pre-existing defects or structural issues outside tenant control. |
-| Alterations and Fit-Out | Identify consent requirements and reinstatement obligations. | Flag broad alteration rights without landlord consent or no reinstatement obligation. | Flag absolute consent rights, broad reinstatement obligations, or unclear fit-out approval timing. |
-| Assignment, Underletting, and Sharing Occupation | Identify transfer restrictions, consent tests, and group sharing rights. | Flag broad permitted transfer rights allowing assignment to unsuitable tenants without approval. | Flag absolute assignment bans, excessive consent conditions, or no group sharing rights. |
-| Insurance and Damage | Identify who insures, insured risks, rent suspension, and termination rights on damage. | Flag tenant insurance obligations too narrow or absence of rent suspension protection. | Flag no rent suspension on damage, uninsured risk exposure, or no termination right after prolonged damage. |
-| Break Rights | Identify break dates, notice periods, and conditions. | Flag broadly exercisable break conditions allowing tenant exit without adequate penalty. | Flag fragile break conditions, strict vacant possession tests, or excessive preconditions. |
-| Default and Remedies | Identify default events, cure periods, and enforcement rights. | Flag long cure periods, high default thresholds, or limited remedies that delay enforcement. | Flag short cure periods, broad default triggers, or landlord self-help without adequate notice. |
-| Compliance Obligations | Identify which party bears responsibility for regulatory compliance. | Flag compliance gaps exposing the landlord to regulatory liability. | Flag tenant responsibility for landlord works, historic contamination, or compliance beyond the demised premises. |
-| Security Package | Identify security type, quantum, and release conditions. | Flag security inadequate for the tenant's covenant strength or release mechanics too easy to trigger. | Flag excessive security requirements, no step-down on release, or unclear deposit return mechanics. |
-| Rights Reserved and Easements | Identify reserved landlord rights, access arrangements, and tenant rights over common parts. | Flag insufficient reserved rights limiting the landlord's ability to manage the building. | Flag broad landlord entry or disruption rights, or missing rights needed for the tenant's permitted use. |
-| End of Term | Identify yielding-up condition, reinstatement obligations, and dilapidations process. | Flag inadequate reinstatement obligations, unclear yielding-up conditions, or weak dilapidations recovery. | Flag overly broad reinstatement obligations or handback conditions requiring a better standard than at commencement. |
-| Governing Law and Dispute Resolution | State governing law, court forum, expert determination process, and mandatory dispute procedures. Flag ambiguous forum, missing expert determination terms, or inadequate dispute mechanics. | | |
+| Kiralanan ve kullanım amacı | Kiralananı, eklentilerini ve kullanım amacını belirle. Çatılı işyeri kiralarında TBK md. 339 vd. koruyucu hükümlerinin uygulanacağını not et. | Belirsiz kullanım amacını ve kiracıya fazla geniş kullanım serbestisini işaretle. | Faaliyeti engelleyecek dar kullanım amacını işaretle. |
+| Süre ve yenileme | Süreyi ve yenilemeyi belirt. Kiracı bildirimde bulunmazsa sözleşmenin aynı koşullarla bir yıl uzayacağını ve kiraya verenin süre bitimine dayanarak sözleşmeyi sona erdiremeyeceğini dikkate al (TBK md. 347). | On yıllık uzama süresinden sonraki fesih imkânının değerlendirilmemesini işaretle. | Kanuni korumayı dolanmaya yönelik hükümleri işaretle. |
+| Kira bedeli ve artış | Kira bedelini, ödeme zamanını ve artış oranını belirt. Yenilenen dönemlerde artış TÜFE on iki aylık ortalamasını geçemez; beş yıldan sonra hâkim hakkaniyete göre belirleyebilir (TBK md. 344). Yabancı para üzerinden kira kararlaştırılmasına ilişkin güncel kısıtlamaları (doğrulanmamış) not et. | Kanuni sınırı aşan ve bu nedenle aşan kısmı geçersiz olacak artış hükmünü işaretle. | Kanuni sınırı aşan artışı ve kiracı aleyhine kira dışı değişiklikleri (TBK md. 343) işaretle. |
+| Güvence (depozito) | Güvencenin tutarını ve saklanma biçimini belirt. Güvence üç aylık kirayı aşamaz ve vadeli bir tasarruf hesabına yatırılır (TBK md. 342). | Güvencenin bankaya yatırılmamasından doğan riskleri işaretle. | Üç ayı aşan güvenceyi ve nakit olarak kiraya verene ödenmesini işaretle. |
+| Bağlantılı sözleşmeler | Sözleşmenin kurulmasının kiracının başka bir sözleşme yapmasına bağlanıp bağlanmadığını belirle; bu tür bağlantı kiracı aleyhine kesin hükümsüzdür (TBK md. 340). |  | Kiracıyı kiraya verenin belirlediği tedarikçilerle sözleşmeye zorlayan hükümleri işaretle. |
+| Bakım, onarım ve giderler | Kiralananın bakımını, onarım sorumluluğunu, yan giderleri ve vergi ile aidat paylaşımını özetle. | Esaslı onarımların kiraya verene yüklenmesini işaretle. | Kiraya verenin olağan ve esaslı onarım yükümlülüklerinin kiracıya aktarılmasını işaretle. |
+| Tadilat ve tesisat | Kiracının tadilat yapma hakkını, izin usulünü ve sözleşme sonunda iade durumunu belirt. | İzin olmadan tadilat yapılmasını işaretle. | Yapılan faydalı masrafların karşılıksız kalmasını işaretle. |
+| Alt kira ve devir | Alt kiraya verme ve kira ilişkisinin devrini belirt; işyeri kiralarında kiraya verenin haklı sebep olmadıkça devre rıza göstermekten kaçınamayacağını dikkate al (TBK md. 323). | Kontrolsüz devri işaretle. | İşletmenin devrini engelleyen mutlak yasakları işaretle. |
+| Temerrüt ve tahliye | Kira bedelinin ödenmemesinde yazılı süre verme ve fesih usulünü (TBK md. 315, çatılı işyerinde en az otuz gün) ve iki haklı ihtar nedeniyle tahliyeyi (TBK md. 352) özetle. Tahliye taahhütnamesi varsa geçerlilik koşullarını değerlendir. | Kanuni usulle uyumsuz, uygulanamayacak fesih hükümlerini işaretle. | Kanuni süreleri kısaltan ve kiracının ihtarsız temerrüde düşeceğini öngören hükümleri işaretle. |
+| Cezai şart | Cezai şartları belirle. Kiracının borçlarını zamanında ödememesi hâlinde ceza ya da muacceliyet öngörülmesinin geçersizliğini değerlendir (TBK md. 346). | Geçersizlik riskini işaretle. | Kira borcuna bağlanmış cezai şart ve muacceliyet kayıtlarını işaretle. |
+| Sigorta ve risk | Kiralananın ve faaliyetin sigortalanmasını, hasar ve risk paylaşımını özetle. | Kiracının sorumluluk sigortası yükümlülüğünün olmamasını işaretle. | Kiracının kusuru olmayan hasarlardan sorumlu tutulmasını işaretle. |
+| Uyuşmazlık çözümü | Yetkili mahkemeyi ve icra dairesini belirt; kira uyuşmazlıklarında sulh hukuk mahkemesinin görevli olduğunu ve dava şartı arabuluculuğu (doğrulanmamış) not et. |  |  |
 
-Deliver the review inline in your chat response. Do not generate a downloadable Word document unless the user explicitly asks for one.
+İncelemeyi sohbette, satır içinde ver. Kullanıcı açıkça istemedikçe indirilebilir bir Word belgesi oluşturma.
+
+## Türk hukuku
+
+- Belgeyi Türk hukukuna göre değerlendir. Uygulanacak hukuk başka bir ülkenin hukukuysa bunu belirt ve Türk hukukuna göre yaptığın tespitleri bununla sınırlı tut.
+- Bir değerlendirme kanun hükmüne dayanıyorsa ilgili maddeyi mevzuat arama aracıyla bul, oku ve atıf yap (ör. "TBK md. 27"). Madde numarasını hafızadan yazma.
+- Yerleşik içtihat sonucu değiştirebilecekse içtihat arama aracıyla Yargıtay kararlarını bul; dayanmadan önce kararı oku ve künyeyi sonuçtan aktar.
+- Veritabanında olmayan bir mevzuat gerekiyorsa (ör. İş Kanunu, İcra ve İflas Kanunu, MÖHUK) bunu açıkça söyle ve o kısmı doğrulanmamış olarak işaretle.

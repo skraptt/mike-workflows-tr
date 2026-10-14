@@ -1,53 +1,61 @@
 ---
 name: "compare-documents"
-description: "Compare the uploaded documents in a structured table, highlighting key similarities, differences, risks, and follow-up points."
+description: "Yüklenen belgeleri yapılandırılmış bir tabloda karşılaştırır; önemli benzerlikleri, farkları, riskleri ve takip edilecek noktaları gösterir."
 license: "MIT"
 metadata:
-  version: "1.0.0"
-  author: "Open Legal Products"
-  language: "English"
-  mike-display-name: "Compare Documents"
+  version: "1.0.0-tr.1"
+  author: "Open Legal Products; Türkçe uyarlama: mikeTR"
+  language: "Turkish"
+  mike-display-name: "Belgeleri Karşılaştır"
   mike-type: "assistant"
   mike-availability: "system"
-  practice: "General Transactions"
-  jurisdictions: "General"
+  practice: "Genel Sözleşmeler"
+  jurisdictions: "Türkiye"
 ---
-# Compare Documents
 
-## Instructions
+# Belgeleri Karşılaştır
 
-Compare the uploaded documents for a legal or business reviewer. Focus on the provisions, terms, risks, and commercial points that differ across the documents. The comparison must work for any number of uploaded documents.
+## Talimatlar
 
-Produce the comparison as a Markdown table. The table must have exactly these columns:
+Yüklenen belgeleri bir hukukçu ya da iş tarafı için karşılaştır. Belgeler arasında farklılaşan hükümlere, şartlara, risklere ve ticari noktalara odaklan. Karşılaştırma, yüklenen belge sayısı ne olursa olsun çalışmalıdır.
 
-- Topic
-- One column for each uploaded document, using the document name or a short readable document label as the column heading
-- Difference
+Karşılaştırmayı bir Markdown tablosu olarak hazırla. Tablo tam olarak şu sütunlardan oluşmalıdır:
 
-For example, if three documents are uploaded, the table should use this shape:
+- Konu
+- Yüklenen her belge için bir sütun (sütun başlığı belgenin adı ya da kısa, okunaklı bir etiketi)
+- Fark
 
-| Topic | Document A | Document B | Document C | Difference |
+Örneğin üç belge yüklendiyse tablo şu biçimde olur:
+
+| Konu | Belge A | Belge B | Belge C | Fark |
 | --- | --- | --- | --- | --- |
 
-Compare the documents across the most relevant topics, including where available:
+Belgeleri, bulunduğu ölçüde şu konularda karşılaştır:
 
-- Parties and roles
-- Document date and effective date
-- Term, expiry, renewal, and extension rights
-- Scope of work, services, deliverables, or subject matter
-- Fees, pricing, payment terms, penalties, and currency
-- Conditions precedent, approvals, consents, and notices
-- Representations, warranties, covenants, and restrictions
-- Confidentiality, IP ownership, data protection, and use rights
-- Assignment, transfer, change of control, and subcontracting
-- Termination rights, suspension rights, cure periods, and consequences
-- Liability caps, indemnities, exclusions, insurance, and remedies
-- Governing law, jurisdiction, dispute resolution, and service of process
+- Taraflar ve sıfatları
+- Belge tarihi ve yürürlük tarihi
+- Süre, sona erme, yenileme ve uzatma hakları
+- İşin, hizmetin, teslim edilecek şeylerin ya da sözleşme konusunun kapsamı
+- Bedel, fiyat, ödeme koşulları, temerrüt faizi, cezai şart ve para birimi
+- Ön koşullar, onaylar, izinler ve bildirimler
+- Taahhütler, garantiler ve kısıtlamalar
+- Gizlilik, fikrî mülkiyet, kişisel verilerin korunması ve kullanım hakları
+- Devir, temlik, kontrol değişikliği ve alt yüklenici kullanımı
+- Fesih ve askıya alma hakları, ihtar ve süre verme, fesih sonuçları
+- Sorumluluk sınırları, tazminat, sorumsuzluk kayıtları, sigorta ve diğer hukuki çareler
+- Uygulanacak hukuk, yetkili mahkeme ya da tahkim, tebligat adresleri
 
-Use concise entries in the document columns. Under each document column, state the relevant term and include the best available location with citations, such as clause, section, schedule, page, paragraph, or heading. If citations are available, include them inline with the location. If a location is unclear, describe it as specifically as possible.
+Belge sütunlarına kısa girişler yaz. Her girişte ilgili hükmü ve bulunabilen en iyi yeri belirt (madde, bent, ek, sayfa, paragraf ya da başlık). Yer belirsizse olabildiğince somut tarif et.
 
-In the **Difference** column, explain what changed or diverges, including any negotiation, legal, operational, or commercial significance where useful.
+**Fark** sütununda neyin değiştiğini ya da ayrıştığını, gerektiğinde müzakere, hukuki, operasyonel ya da ticari önemiyle birlikte açıkla. Fark bir kanun hükmü bakımından önem taşıyorsa (ör. genel işlem koşulu denetimi, kesin hükümsüzlük, cezai şart) dayanak maddeyi atıfla göster.
 
-After the table, include a short **Key Takeaways** section with no more than five bullets summarising the most important differences and follow-up actions.
+Tablodan sonra en önemli farkları ve takip edilecek adımları özetleyen, en fazla beş maddelik kısa bir **Önemli Noktalar** bölümü ekle.
 
-Do not invent facts, clauses, parties, dates, amounts, or obligations. If a topic is not addressed in a document, write "Not stated" for that document. If the uploaded documents are not comparable, explain why and provide the closest useful comparison.
+Olgu, hüküm, taraf, tarih, tutar ya da yükümlülük uydurma. Bir belgede konu düzenlenmemişse o belge için "Düzenlenmemiş" yaz. Belgeler karşılaştırılabilir değilse nedenini açıkla ve en yararlı yakın karşılaştırmayı sun.
+
+## Türk hukuku
+
+- Belgeyi Türk hukukuna göre değerlendir. Uygulanacak hukuk başka bir ülkenin hukukuysa bunu belirt ve Türk hukukuna göre yaptığın tespitleri bununla sınırlı tut.
+- Bir değerlendirme kanun hükmüne dayanıyorsa ilgili maddeyi mevzuat arama aracıyla bul, oku ve atıf yap (ör. "TBK md. 27"). Madde numarasını hafızadan yazma.
+- Yerleşik içtihat sonucu değiştirebilecekse içtihat arama aracıyla Yargıtay kararlarını bul; dayanmadan önce kararı oku ve künyeyi sonuçtan aktar.
+- Veritabanında olmayan bir mevzuat gerekiyorsa (ör. İş Kanunu, İcra ve İflas Kanunu, MÖHUK) bunu açıkça söyle ve o kısmı doğrulanmamış olarak işaretle.

@@ -1,92 +1,74 @@
-$schema: "../../workflow-schema/table-columns.schema.yaml"
+$schema: ../../workflow-schema/table-columns.schema.yaml
 columns:
-  - index: 0
-    name: "Parties"
-    format: "bulleted_list"
-    prompt: >-
-      Identify all parties to this agreement. For each party state their full legal name, jurisdiction of incorporation (if stated), and their role in the agreement (e.g. supplier, customer, licensor).
-  - index: 1
-    name: "Scope of Work"
-    format: "text"
-    prompt: >-
-      Summarise the scope of work or services to be provided under this agreement. What are the key deliverables, obligations, or services? Identify any limitations or exclusions to the scope.
-  - index: 2
-    name: "Amends Earlier Agreement"
-    format: "text"
-    prompt: >-
-      Does this agreement amend, restate, supplement, or replace an earlier agreement? If yes, identify the earlier agreement by name and date.
-  - index: 3
-    name: "Effective Date"
-    format: "date"
-    prompt: >-
-      What is the effective date or commencement date of this agreement? If no explicit date is stated, note when it is deemed to take effect.
-  - index: 4
-    name: "Term"
-    format: "text"
-    prompt: >-
-      What is the duration or term of this agreement? State the initial term length and any conditions that affect the duration.
-  - index: 5
-    name: "Renewal"
-    format: "text"
-    prompt: >-
-      What renewal provisions apply? Specify whether renewal is automatic or requires notice, the renewal period, and any conditions or notice periods required to prevent automatic renewal.
-  - index: 6
-    name: "Pricing"
-    format: "text"
-    prompt: >-
-      What is the pricing structure under this agreement? Identify all fees, rates, charges, and payment terms including currency, payment schedule, and invoicing requirements.
-  - index: 7
-    name: "Price Adjustments"
-    format: "text"
-    prompt: >-
-      Are there any price adjustment mechanisms in this agreement? Identify any indexation, CPI/RPI linkage, benchmarking, volume-based adjustments, or other mechanisms that allow prices to change over the term.
-  - index: 8
-    name: "Penalties for Late Payment"
-    format: "text"
-    prompt: >-
-      What penalties or consequences apply for late payment? Include any interest rates on overdue amounts, suspension rights, or other remedies available to the payee.
-  - index: 9
-    name: "Estimated Contract Value"
-    format: "text"
-    prompt: >-
-      What is the total estimated or stated contract value? If no single figure is given, calculate or estimate based on stated rates and term. State the currency and any assumptions made.
-  - index: 10
-    name: "Limitation of Liability"
-    format: "text"
-    prompt: >-
-      What limitations of liability apply? Identify any caps on liability (including how they are calculated), exclusions of consequential or indirect loss, and any carve-outs from the cap (e.g. fraud, death, IP infringement).
-  - index: 11
-    name: "IP Ownership and Licensing"
-    format: "text"
-    prompt: >-
-      How is intellectual property ownership and licensing addressed? Identify who owns pre-existing IP, who owns newly created IP, and what licences are granted to each party. Note any restrictions on use.
-  - index: 12
-    name: "Change of Control"
-    format: "text"
-    prompt: >-
-      Is there a change of control provision? If so, describe what constitutes a change of control, whether consent is required, and what rights (e.g. termination, assignment) are triggered.
-  - index: 13
-    name: "Force Majeure"
-    format: "text"
-    prompt: >-
-      Summarise the force majeure clause. What events qualify, what obligations are suspended, how long must the event persist before termination is permitted, and what notice is required?
-  - index: 14
-    name: "Termination Rights"
-    format: "text"
-    prompt: >-
-      What are the termination rights of each party? Identify termination for convenience (including notice period), termination for cause (including cure periods), and the consequences of termination (e.g. payment obligations, survival of terms).
-  - index: 15
-    name: "Liquidated Damages"
-    format: "text"
-    prompt: >-
-      Are there any liquidated damages provisions? If so, identify what triggers them, the applicable rate or formula, any cap on aggregate liquidated damages, and whether they are the exclusive remedy.
-  - index: 16
-    name: "Governing Law"
-    format: "text"
-    prompt: >-
-      What governing law applies to this agreement? State the jurisdiction and any specific legal system referenced.
-  - index: 17
-    name: "Dispute Resolution"
-    format: "text"
-    prompt: >-
-      How are disputes resolved under this agreement? Identify whether disputes go to litigation or arbitration, the chosen forum or seat, any escalation or mediation steps required before formal proceedings, and the language of proceedings.
+- index: 0
+  name: Taraflar
+  format: bulleted_list
+  prompt: Sözleşmenin bütün taraflarını belirle. Her taraf için tam ticaret unvanını, varsa MERSİS ya da vergi numarasını ve sözleşmedeki sıfatını (ör. satıcı, alıcı, hizmet sağlayan, lisans veren) yaz.
+- index: 1
+  name: Kapsam
+  format: text
+  prompt: Sözleşme kapsamında sağlanacak iş, hizmet ya da malları özetle. Temel teslim edilecekleri ve yükümlülükleri, kapsam sınırlamalarını ve istisnaları belirt.
+- index: 2
+  name: Önceki sözleşmeyle ilişkisi
+  format: text
+  prompt: Bu sözleşme önceki bir sözleşmeyi değiştiriyor, yeniden düzenliyor, tamamlıyor ya da onun yerini alıyor mu? Evetse önceki sözleşmeyi adı ve tarihiyle belirt.
+- index: 3
+  name: Yürürlük tarihi
+  format: date
+  prompt: Sözleşmenin yürürlük ya da başlangıç tarihi nedir? Açık bir tarih yoksa ne zaman yürürlüğe girmiş sayıldığını belirt.
+- index: 4
+  name: Süre
+  format: text
+  prompt: Sözleşmenin süresi nedir? İlk süreyi ve süreyi etkileyen koşulları belirt.
+- index: 5
+  name: Yenileme
+  format: text
+  prompt: Hangi yenileme hükümleri uygulanır? Yenilemenin kendiliğinden mi bildirimle mi olduğunu, yenileme süresini ve kendiliğinden yenilemeyi önlemek için gereken bildirim sürelerini belirt.
+- index: 6
+  name: Bedel ve ödeme
+  format: text
+  prompt: Bedel yapısı nedir? Bütün ücretleri, oranları, ödeme koşullarını, para birimini, KDV'nin dahil olup olmadığını, ödeme takvimini ve faturalama şartlarını belirt.
+- index: 7
+  name: Fiyat ayarlaması
+  format: text
+  prompt: Fiyat ayarlama mekanizması var mı? TÜFE/ÜFE endekslemesi, kur farkı, hacme bağlı indirim ya da diğer ayarlama hükümlerini belirt.
+- index: 8
+  name: Geç ödemenin sonuçları
+  format: text
+  prompt: Geç ödemede hangi sonuçlar uygulanır? Temerrüt faizi oranını, ifadan kaçınma ya da hizmeti durdurma hakkını ve diğer çareleri belirt.
+- index: 9
+  name: Tahmini sözleşme değeri
+  format: text
+  prompt: Sözleşmenin toplam tahmini ya da belirtilen değeri nedir? Tek bir tutar yoksa belirtilen oranlar ve süreye göre hesapla ya da tahmin et; para birimini ve varsayımlarını yaz.
+- index: 10
+  name: Sorumluluk sınırı
+  format: text
+  prompt: Hangi sorumluluk sınırlamaları uygulanır? Üst sınırları ve nasıl hesaplandığını, dolaylı zarar istisnalarını ve sınırın dışında tutulan hâlleri belirt. Kast ve ağır kusurdan sorumsuzluk kaydı varsa TBK md. 115 bakımından not düş.
+- index: 11
+  name: Fikrî mülkiyet
+  format: text
+  prompt: Fikrî mülkiyet hakları nasıl düzenlenmiş? Önceden var olan ve yeni oluşturulan eserlerin kime ait olduğunu ve verilen lisansları belirt. Mali hakların FSEK'in aradığı gibi yazılı ve tek tek sayılarak devredilip devredilmediğini not et.
+- index: 12
+  name: Kontrol değişikliği
+  format: text
+  prompt: Kontrol değişikliği hükmü var mı? Neyin kontrol değişikliği sayıldığını, onay gerekip gerekmediğini ve doğan hakları (ör. fesih) belirt.
+- index: 13
+  name: Mücbir sebep
+  format: text
+  prompt: Mücbir sebep hükmünü özetle. Hangi olayların sayıldığını, hangi yükümlülüklerin askıya alındığını, fesih için olayın ne kadar sürmesi gerektiğini ve bildirim şartlarını belirt.
+- index: 14
+  name: Fesih hakları
+  format: text
+  prompt: Her tarafın fesih hakları nelerdir? Bildirimle (sebepsiz) feshi ve bildirim süresini, haklı nedenle feshi ve süre verme şartını, diğer fesih sebeplerini belirt.
+- index: 15
+  name: Cezai şart
+  format: text
+  prompt: Cezai şart var mı? Neyle tetiklendiğini, oranı ya da formülü, toplam üst sınırı ve cezanın ifa ile ilişkisini (seçimlik mi, ifayla birlikte mi) belirt (TBK md. 179-182). Borçlu tacir ise TTK md. 22 bakımından not düş.
+- index: 16
+  name: Uygulanacak hukuk
+  format: text
+  prompt: Sözleşmeye hangi hukuk uygulanır? Belirtilen ülke hukukunu yaz.
+- index: 17
+  name: Uyuşmazlık çözümü
+  format: text
+  prompt: Uyuşmazlıklar nasıl çözülür? Mahkeme ya da tahkim seçimini, yetkili mahkemeyi ya da tahkim yerini, varsa müzakere ve arabuluculuk aşamalarını belirt. Yetki şartının HMK md. 17, tahkim şartının HMK md. 412 bakımından geçerliliğini not et.

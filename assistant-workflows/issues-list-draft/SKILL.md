@@ -1,47 +1,52 @@
 ---
 name: "issues-list-draft"
-description: "Review the uploaded agreement and draft a comprehensive issues list from the perspective of the party represented by the user/client."
+description: "Yüklenen sözleşmeyi inceler ve kullanıcının temsil ettiği tarafın bakış açısından kapsamlı bir müzakere sorunları listesi hazırlar."
 license: "MIT"
 metadata:
-  version: "2.0.0"
-  author: "Open Legal Products"
-  language: "English"
-  mike-display-name: "Issues List Draft"
+  version: "2.0.0-tr.1"
+  author: "Open Legal Products; Türkçe uyarlama: mikeTR"
+  language: "Turkish"
+  mike-display-name: "Müzakere Sorunları Listesi"
   mike-type: "assistant"
   mike-availability: "system"
-  practice: "General Transactions"
-  jurisdictions: "General"
+  practice: "Genel Sözleşmeler"
+  jurisdictions: "Türkiye"
 ---
-# Issues List Draft
 
-## Instructions
+# Müzakere Sorunları Listesi
 
-Review the uploaded agreement and draft a comprehensive issues list from the perspective of the party represented by the user/client. If the user has not already identified which party they represent, ask them to clarify that party before drafting the issues list.
+## Talimatlar
 
-An issues list identifies open, unresolved, or contentious points in the current draft that require negotiation or resolution before signing. Focus on points that are material to the represented party's commercial and legal position.
+Yüklenen sözleşmeyi incele ve kullanıcının (müvekkilin) temsil ettiği tarafın bakış açısından kapsamlı bir sorunlar listesi hazırla. Kullanıcı hangi tarafı temsil ettiğini belirtmediyse listeyi hazırlamadan önce bunu sor.
 
-Once the represented party is clear, produce the issues list as an exportable
-Word (`.docx`) document in landscape orientation. Return the completed document
-as a file rather than displaying the issues list inline.
+Sorunlar listesi, mevcut taslakta imzadan önce müzakere edilmesi ya da çözülmesi gereken açık, belirsiz ya da tartışmalı noktaları gösterir. Temsil edilen tarafın ticari ve hukuki konumu bakımından önemli noktalara odaklan.
 
-The Word document must contain exactly one result table. List each open issue in order from highest to lowest priority and add a final row called **Overall Negotiation Position**. The result table must have exactly these columns:
+Temsil edilen taraf belli olduğunda listeyi yatay sayfa düzeninde, dışa aktarılabilir bir Word (`.docx`) belgesi olarak hazırla. Listeyi sohbette göstermek yerine tamamlanmış belgeyi dosya olarak döndür.
 
-- Issue
-- Current Position
-- Proposed Change
+Word belgesi tam olarak bir sonuç tablosu içermelidir. Her açık sorunu öncelik sırasıyla (en yüksekten en düşüğe) listele ve en sona **Genel Müzakere Pozisyonu** başlıklı bir satır ekle. Tablo tam olarak şu sütunlardan oluşmalıdır:
 
-Use these priority ratings at the start of the **Current Position** column: Critical means a blocking issue that must be resolved before signing; High means a material point requiring negotiation; Medium means a negotiation concern but manageable; Low means a minor point for consideration only. Include relevant clause references in the **Current Position** column. The **Proposed Change** column must state the specific amendment or position the represented party should seek, drafted from that party's perspective. Keep the response concise and focused on actionable negotiation points.
+- Sorun
+- Mevcut Durum
+- Önerilen Değişiklik
 
-## Result Table Format
+**Mevcut Durum** sütununa şu öncelik derecelerinden biriyle başla: Kritik, imzadan önce çözülmesi şart olan engelleyici sorundur; Yüksek, müzakere gerektiren önemli bir noktadır; Orta, yönetilebilir bir müzakere konusudur; Düşük, yalnızca dikkate alınması gereken küçük bir noktadır. **Mevcut Durum** sütununa ilgili madde atıflarını ekle. **Önerilen Değişiklik** sütununda temsil edilen tarafın istemesi gereken somut değişikliği ya da pozisyonu o tarafın bakış açısından yaz. Sorun bir kanun hükmüne dayanıyorsa (ör. ağır kusurdan sorumsuzluk kaydının TBK md. 115 uyarınca kesin hükümsüz olması) maddeyi atıfla göster.
 
-The Word document must use this result table structure. The example rows are illustrative only; tailor the actual rows to the uploaded agreement and represented party.
+## Sonuç Tablosu Biçimi
 
-| Issue | Current Position | Proposed Change |
+Word belgesi bu tablo yapısını kullanmalıdır. Örnek satırlar yalnızca açıklama içindir; gerçek satırları yüklenen sözleşmeye ve temsil edilen tarafa göre hazırla.
+
+| Sorun | Mevcut Durum | Önerilen Değişiklik |
 | --- | --- | --- |
-| Liability Cap | High — Clause [x] contains no monetary cap on the represented party's total liability under the agreement. | Add a liability cap equal to [amount] or a multiple of fees paid, with carve-outs limited to fraud and wilful misconduct. |
-| Governing Law | Medium — Clause [x] specifies [jurisdiction] law, which is inconvenient for the represented party's operations and legal advisers. | Change governing law to [preferred jurisdiction] and amend the dispute resolution clause accordingly. |
+| Sorumluluk sınırı | Yüksek — Madde [x], temsil edilen tarafın sözleşmeden doğan toplam sorumluluğu için parasal bir üst sınır öngörmüyor. | Toplam sorumluluğu [tutar] ya da ödenen bedelin belirli bir katıyla sınırlayan bir hüküm ekleyin; kast ve ağır kusur hâlleri TBK md. 115 uyarınca bu sınırın dışında kalır. |
+| Yetkili mahkeme | Orta — Madde [x], temsil edilen tarafın faaliyet gösterdiği yer dışında bir yer mahkemesini yetkili kılıyor. | Yetkiyi [tercih edilen yer] mahkemelerine ve icra dairelerine verin; tarafların tacir olduğunu ve yetki sözleşmesinin HMK md. 17 şartlarını karşıladığını teyit edin. |
 
-Place the issues list rows in the result table rather than presenting them as
-prose.
+Sorunları düz yazı olarak değil, tablo satırları olarak yaz.
 
-Before finalizing, double-check that the table is formatted correctly: it must have exactly the three columns above in the same order, headers must match exactly (Issue, Current Position, Proposed Change), every row must have the same number of cells as the headers, issues must be ordered from highest to lowest priority, and no cells should contain stray markdown, newlines, or placeholder text unless the source document requires a placeholder.
+Sonuçlandırmadan önce tabloyu kontrol et: tam olarak yukarıdaki üç sütun aynı sırayla olmalı, başlıklar birebir aynı olmalı (Sorun, Mevcut Durum, Önerilen Değişiklik), her satırda başlık sayısı kadar hücre bulunmalı, sorunlar en yüksek öncelikten en düşüğe sıralanmalı ve kaynak belge gerektirmedikçe hücrelerde başıboş Markdown işareti, satır sonu ya da yer tutucu kalmamalı.
+
+## Türk hukuku
+
+- Belgeyi Türk hukukuna göre değerlendir. Uygulanacak hukuk başka bir ülkenin hukukuysa bunu belirt ve Türk hukukuna göre yaptığın tespitleri bununla sınırlı tut.
+- Bir değerlendirme kanun hükmüne dayanıyorsa ilgili maddeyi mevzuat arama aracıyla bul, oku ve atıf yap (ör. "TBK md. 27"). Madde numarasını hafızadan yazma.
+- Yerleşik içtihat sonucu değiştirebilecekse içtihat arama aracıyla Yargıtay kararlarını bul; dayanmadan önce kararı oku ve künyeyi sonuçtan aktar.
+- Veritabanında olmayan bir mevzuat gerekiyorsa (ör. İş Kanunu, İcra ve İflas Kanunu, MÖHUK) bunu açıkça söyle ve o kısmı doğrulanmamış olarak işaretle.

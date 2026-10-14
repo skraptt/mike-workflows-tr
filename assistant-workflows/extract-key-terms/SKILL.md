@@ -1,45 +1,53 @@
 ---
 name: "extract-key-terms"
-description: "Extract the key legal, commercial, and operational terms from the uploaded documents."
+description: "Yüklenen belgelerden temel hukuki, ticari ve operasyonel hükümleri yer bilgisiyle birlikte bir tabloya çıkarır."
 license: "MIT"
 metadata:
-  version: "1.0.0"
-  author: "Open Legal Products"
-  language: "English"
-  mike-display-name: "Extract Key Terms"
+  version: "1.0.0-tr.1"
+  author: "Open Legal Products; Türkçe uyarlama: mikeTR"
+  language: "Turkish"
+  mike-display-name: "Temel Hükümleri Çıkar"
   mike-type: "assistant"
   mike-availability: "system"
-  practice: "General Transactions"
-  jurisdictions: "General"
+  practice: "Genel Sözleşmeler"
+  jurisdictions: "Türkiye"
 ---
-# Extract Key Terms
 
-## Instructions
+# Temel Hükümleri Çıkar
 
-Extract the key legal, commercial, and operational terms from the uploaded documents. Present the result as a concise Markdown table.
+## Talimatlar
 
-The table must have exactly these columns:
+Yüklenen belgelerden temel hukuki, ticari ve operasyonel hükümleri çıkar. Sonucu kısa bir Markdown tablosu olarak sun.
 
-- Term
-- Value
-- Location
-- Notes
+Tablo tam olarak şu sütunlardan oluşmalıdır:
 
-Extract the terms that are most useful for legal review, including where available:
+- Hüküm
+- İçerik
+- Yer
+- Notlar
 
-- Parties and roles
-- Document date and effective date
-- Term, expiry, renewal, and extension rights
-- Scope of work, services, deliverables, or subject matter
-- Fees, pricing, payment terms, interest, penalties, and currency
-- Conditions precedent, approvals, consents, and notices
-- Representations, warranties, covenants, and restrictions
-- Confidentiality, IP ownership, data protection, and use rights
-- Assignment, transfer, change of control, and subcontracting
-- Termination rights, suspension rights, cure periods, and consequences
-- Liability caps, indemnities, exclusions, insurance, and remedies
-- Governing law, jurisdiction, dispute resolution, and service of process
+Hukuki inceleme için en yararlı hükümleri, bulunduğu ölçüde çıkar:
 
-Use the **Location** column for the best available clause, section, schedule, page, or paragraph reference. If a location is unclear, describe it as specifically as possible. Use the **Notes** column to explain ambiguity, missing information, conflicts between documents, or why a term may matter.
+- Taraflar ve sıfatları
+- Belge tarihi ve yürürlük tarihi
+- Süre, sona erme, yenileme ve uzatma hakları
+- İşin, hizmetin ya da sözleşme konusunun kapsamı
+- Bedel, fiyat, ödeme koşulları, temerrüt faizi, cezai şart ve para birimi
+- Ön koşullar, onaylar, izinler ve bildirimler
+- Taahhütler, garantiler ve kısıtlamalar
+- Gizlilik, fikrî mülkiyet, kişisel verilerin korunması ve kullanım hakları
+- Devir, temlik, kontrol değişikliği ve alt yüklenici kullanımı
+- Fesih ve askıya alma hakları, ihtar ve süre verme, fesih sonuçları
+- Sorumluluk sınırları, tazminat, sorumsuzluk kayıtları, sigorta ve diğer hukuki çareler
+- Uygulanacak hukuk, yetkili mahkeme ya da tahkim, tebligat adresleri
 
-If a key term is not found, do not include a speculative value. Instead, include a row only where the absence itself is material, with "Not stated" in the **Value** column. Do not invent facts, citations, clauses, parties, dates, amounts, or obligations.
+**Yer** sütununa bulunabilen en iyi madde, bent, ek, sayfa ya da paragraf atfını yaz. Yer belirsizse olabildiğince somut tarif et. **Notlar** sütununda belirsizlikleri, eksik bilgileri, belgeler arasındaki çelişkileri ya da hükmün neden önemli olabileceğini açıkla. Bir hüküm emredici bir kanun hükmüyle çelişiyor görünüyorsa notta dayanak maddeyi atıfla belirt.
+
+Temel bir hüküm bulunamazsa tahmini bir içerik yazma. Yalnızca hükmün yokluğu önemliyse satır ekle ve **İçerik** sütununa "Düzenlenmemiş" yaz. Olgu, atıf, hüküm, taraf, tarih, tutar ya da yükümlülük uydurma.
+
+## Türk hukuku
+
+- Belgeyi Türk hukukuna göre değerlendir. Uygulanacak hukuk başka bir ülkenin hukukuysa bunu belirt ve Türk hukukuna göre yaptığın tespitleri bununla sınırlı tut.
+- Bir değerlendirme kanun hükmüne dayanıyorsa ilgili maddeyi mevzuat arama aracıyla bul, oku ve atıf yap (ör. "TBK md. 27"). Madde numarasını hafızadan yazma.
+- Yerleşik içtihat sonucu değiştirebilecekse içtihat arama aracıyla Yargıtay kararlarını bul; dayanmadan önce kararı oku ve künyeyi sonuçtan aktar.
+- Veritabanında olmayan bir mevzuat gerekiyorsa (ör. İş Kanunu, İcra ve İflas Kanunu, MÖHUK) bunu açıkça söyle ve o kısmı doğrulanmamış olarak işaretle.

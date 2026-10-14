@@ -16,7 +16,7 @@ files = sorted(
     set((ROOT / "tabular-review-workflows").glob("*/SKILL.md"))
     | set((ROOT / "tabular-review-workflows").glob("*-pack/*/SKILL.md"))
 )
-pattern = re.compile(r"## Instructions\n.*?(?=\n## [^\n]+\n|\Z)", re.DOTALL)
+pattern = re.compile(r"## (?:Instructions|Talimatlar)\n.*?(?=\n## [^\n]+\n|\Z)", re.DOTALL)
 
 for file in files:
     text = file.read_text()

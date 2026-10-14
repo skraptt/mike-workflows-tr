@@ -116,7 +116,8 @@ for file in skill_files:
     if not all(isinstance(value, str) for value in metadata.values()):
         errors.append(f"{file}: metadata values must be strings")
 
-    if folder != display_slug(metadata.get("mike-display-name", "")):
+    # mikeTR: Turkish display names keep Mike's English folder keys.
+    if metadata.get("language") == "English" and folder != display_slug(metadata.get("mike-display-name", "")):
         errors.append(f"{file}: folder must match mike-display-name")
     if not SEMVER_PATTERN.fullmatch(str(metadata.get("version", ""))):
         errors.append(f"{file}: version must use semantic versioning")

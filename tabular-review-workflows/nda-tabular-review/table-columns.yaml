@@ -1,47 +1,38 @@
-$schema: "../../workflow-schema/table-columns.schema.yaml"
+$schema: ../../workflow-schema/table-columns.schema.yaml
 columns:
-  - index: 0
-    name: "Direction"
-    format: "text"
-    prompt: >-
-      Is this NDA mutual (both parties owe confidentiality obligations to each other) or unilateral (only one party owes confidentiality obligations)? Identify the direction and name the disclosing and receiving party or parties.
-  - index: 1
-    name: "Definition of Confidential Information"
-    format: "text"
-    prompt: >-
-      How is 'Confidential Information' defined in this agreement? Is it broadly or narrowly drafted? Does it require information to be marked as confidential, or is all information shared in connection with the purpose automatically covered? Note any express inclusions or exclusions.
-  - index: 2
-    name: "Obligations of Receiving Party"
-    format: "bulleted_list"
-    prompt: >-
-      What are the key obligations of the receiving party in respect of the confidential information? List each obligation (e.g. keep confidential, not disclose to third parties, use only for the permitted purpose, apply a specific standard of care, restrict access to need-to-know personnel).
-  - index: 3
-    name: "Standard Carveouts Present?"
-    format: "text"
-    prompt: >-
-      Does the agreement include the standard carveouts to confidentiality obligations? Answer Yes if the agreement excludes information that: (a) is or becomes publicly available without breach; (b) was already known to the receiving party; (c) is independently developed; and (d) is received from a third party without restriction. Note any carveouts that are missing or are drafted differently from the standard formulation.
-  - index: 4
-    name: "Permitted Disclosures"
-    format: "bulleted_list"
-    prompt: >-
-      To whom may the receiving party disclose confidential information? List each category of permitted recipient (e.g. employees, professional advisers, affiliates, financing parties, regulatory authorities). Note whether onward disclosure requires the recipient to be bound by equivalent obligations.
-  - index: 5
-    name: "Term and Duration"
-    format: "text"
-    prompt: >-
-      What is the term of this NDA and how long do the confidentiality obligations last? State the initial term of the agreement and the duration of the confidentiality obligations (noting whether they survive termination and for how long).
-  - index: 6
-    name: "Return and Destruction"
-    format: "text"
-    prompt: >-
-      What obligations apply on expiry or termination regarding return or destruction of confidential information? Is there a choice between return and destruction? Must destruction be certified? Are there any retention exceptions (e.g. for regulatory purposes, IT backup systems)?
-  - index: 7
-    name: "Remedies"
-    format: "text"
-    prompt: >-
-      What remedies are available for breach of the confidentiality obligations? Does the agreement acknowledge that damages may be inadequate and that injunctive relief or specific performance is available? Are there any agreed liquidated damages or indemnities for breach?
-  - index: 8
-    name: "Governing Law and Jurisdiction"
-    format: "text"
-    prompt: >-
-      What governing law applies to this agreement and which courts have jurisdiction? State the chosen law, the forum, and whether jurisdiction is exclusive or non-exclusive.
+- index: 0
+  name: Yön
+  format: text
+  prompt: Sözleşme karşılıklı mı (iki taraf da birbirine gizlilik borcu altında) yoksa tek taraflı mı? Yönü belirt ve açıklayan ile alan tarafları yaz.
+- index: 1
+  name: Gizli bilginin tanımı
+  format: text
+  prompt: '''Gizli Bilgi'' nasıl tanımlanmış? Tanım geniş mi dar mı? Bilginin gizli olarak işaretlenmesi gerekiyor mu, yoksa amaçla bağlantılı paylaşılan her bilgi kapsamda mı? Açıkça dahil edilen ya da hariç tutulanları yaz.'
+- index: 2
+  name: Alan tarafın yükümlülükleri
+  format: bulleted_list
+  prompt: Alan tarafın gizli bilgiye ilişkin temel yükümlülüklerini listele (ör. gizli tutma, üçüncü kişilere açıklamama, yalnızca amaç için kullanma, belirli bir özen ölçüsü, bilmesi gereken kişilerle sınırlama).
+- index: 3
+  name: Standart istisnalar var mı?
+  format: text
+  prompt: 'Sözleşme standart istisnaları içeriyor mu? Şu bilgileri hariç tutuyorsa Evet yaz: (a) ihlal olmaksızın kamuya açık olan ya da açık hâle gelen, (b) alan tarafın önceden bildiği, (c) bağımsız olarak geliştirilen, (d) üçüncü kişiden kısıtlamasız alınan. Eksik ya da farklı yazılmış istisnaları not et.'
+- index: 4
+  name: İzin verilen açıklamalar
+  format: bulleted_list
+  prompt: Alan taraf gizli bilgiyi kimlere açıklayabilir? Her alıcı kategorisini listele (ör. çalışanlar, danışmanlar, bağlı şirketler, finansman sağlayanlar, düzenleyici kurumlar) ve alıcıların eşdeğer yükümlülüklerle bağlanması gerekip gerekmediğini yaz.
+- index: 5
+  name: Süre
+  format: text
+  prompt: Sözleşmenin süresi nedir ve gizlilik yükümlülükleri ne kadar devam eder? Sözleşme süresini ve yükümlülüklerin sona ermeden sonra ne kadar sürdüğünü yaz.
+- index: 6
+  name: İade ve imha
+  format: text
+  prompt: Süre bitiminde ya da fesihte gizli bilginin iadesi veya imhası için hangi yükümlülükler var? İade ile imha arasında seçim var mı, imhanın belgelenmesi gerekiyor mu, saklama istisnaları (ör. yasal saklama, yedekler) var mı?
+- index: 7
+  name: Cezai şart ve çareler
+  format: text
+  prompt: İhlal hâlinde hangi çareler var? Cezai şartı, tutarını ve ifa ile ilişkisini (TBK md. 179-182), ayrıca tazminat istenip istenemeyeceğini ve ihtiyati tedbir imkânını yaz.
+- index: 8
+  name: Uygulanacak hukuk ve yetki
+  format: text
+  prompt: Sözleşmeye hangi hukuk uygulanır ve hangi mahkemeler yetkilidir? Yetkinin münhasır olup olmadığını ve tahkim şartını yaz.

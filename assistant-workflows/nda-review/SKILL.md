@@ -1,63 +1,70 @@
 ---
 name: "nda-review"
-description: "Review the uploaded non-disclosure agreement and produce a comprehensive table-based legal review from the perspective of the party represented by the user/client."
+description: "Yüklenen gizlilik sözleşmesini, kullanıcının temsil ettiği tarafın bakış açısından tabloya dayalı olarak inceler."
 license: "MIT"
 metadata:
-  version: "1.0.0"
-  author: "Open Legal Products"
-  language: "English"
-  mike-display-name: "NDA Review"
+  version: "1.0.0-tr.1"
+  author: "Open Legal Products; Türkçe uyarlama: mikeTR"
+  language: "Turkish"
+  mike-display-name: "Gizlilik Sözleşmesi İncelemesi"
   mike-type: "assistant"
   mike-availability: "system"
-  practice: "General Transactions"
-  jurisdictions: "General"
+  practice: "Genel Sözleşmeler"
+  jurisdictions: "Türkiye"
 ---
-# NDA Review
 
-## Instructions
+# Gizlilik Sözleşmesi İncelemesi
 
-Review the uploaded non-disclosure agreement and produce a comprehensive table-based legal review from the perspective of the party represented by the user/client. If the user has not already identified which party they represent, ask them to clarify that party before producing the review.
+## Talimatlar
 
-Once the represented party is clear, provide exactly one Markdown result table. Use one row for each material issue found in the agreement, guided by the review checklist below, and add a final row called **Overall Risk Rating**. The result table must have exactly these columns:
+Yüklenen gizlilik sözleşmesini (NDA) incele ve kullanıcının (müvekkilin) temsil ettiği tarafın bakış açısından tabloya dayalı kapsamlı bir hukuki inceleme hazırla. Kullanıcı hangi tarafı (bilgiyi açıklayan taraf ya da bilgiyi alan taraf) temsil ettiğini belirtmediyse incelemeye başlamadan önce bunu sor.
 
-- Issue
-- Summary
-- Recommended Change
+Temsil edilen taraf belli olduğunda tam olarak bir Markdown sonuç tablosu ver. Aşağıdaki kontrol listesine dayanarak sözleşmede bulduğun her önemli sorun için bir satır kullan ve en sona **Genel Risk Değerlendirmesi** başlıklı bir satır ekle. Tablo tam olarak şu sütunlardan oluşmalıdır:
 
-Use these risk ratings inside the **Summary** column: Low means standard or minimal concern; Medium means a manageable negotiation concern; High means a material legal, commercial, operational, or enforceability concern requiring negotiation; Critical means a severe issue that may block signing unless resolved. Start each summary with the risk rating, e.g. "High - confidential information definition is too narrow".
+- Sorun
+- Özet
+- Önerilen Değişiklik
 
-The **Summary** column should include only the relevant points from the **General** checklist column and the party-specific checklist column for the represented party, together with clause references where available. Do not include issues that are adverse only to another party unless they also create risk for the represented party. The **Recommended Change** column must be drafted from the represented party's perspective. Also flag general drafting errors that may affect the represented party, including inconsistent defined terms, inconsistent entity names, cross-reference errors, numbering issues, duplicated provisions, missing schedules, and internal inconsistencies. Keep the response concise and avoid long prose outside the table.
+**Özet** sütununa şu risk derecelerinden biriyle başla: Düşük, olağan ya da önemsiz bir endişedir; Orta, yönetilebilir bir müzakere konusudur; Yüksek, müzakere gerektiren önemli bir hukuki, ticari, operasyonel ya da geçerlilik sorunudur; Kritik, çözülmezse imzayı engelleyebilecek ciddi bir sorundur. Örnek: "Yüksek - rekabet yasağının süresi ve yer sınırı belirsiz".
 
-## Result Table Format
+**Özet** sütununa yalnızca kontrol listesinin **Genel** sütunundan ve temsil edilen tarafın sütunundan ilgili noktaları, mümkün olduğunda madde atıflarıyla yaz. Yalnızca karşı tarafın aleyhine olan ve temsil edilen taraf için risk yaratmayan noktaları ekleme. **Önerilen Değişiklik** sütununu temsil edilen tarafın bakış açısından yaz. Temsil edilen tarafı etkileyebilecek genel yazım hatalarını da işaretle: tutarsız tanımlar ve unvanlar, atıf ve numaralandırma hataları, tekrarlanan hükümler, eksik ekler ve iç çelişkiler. Yanıtı kısa tut; tablo dışında uzun düz yazıdan kaçın.
 
-Use this result table structure. Cite the relevant clause, section, schedule, or page directly in the **Summary** and **Recommended Change** columns. The example rows are illustrative only; tailor the actual rows to the uploaded agreement and represented party.
+Bir sorun kanunun emredici bir hükmüne, kesin hükümsüzlüğe ya da genel işlem koşulları denetimine dayanıyorsa dayanak maddeyi atıfla göster ve maddeyi mevzuat arama aracıyla kontrol et.
 
-| Issue | Summary | Recommended Change |
+## Sonuç Tablosu Biçimi
+
+Bu tablo yapısını kullan. İlgili madde, bent, ek ya da sayfayı doğrudan **Özet** ve **Önerilen Değişiklik** sütunlarında belirt. Örnek satırlar yalnızca açıklama içindir; gerçek satırları yüklenen sözleşmeye ve temsil edilen tarafa göre hazırla.
+
+| Sorun | Özet | Önerilen Değişiklik |
 | --- | --- | --- |
-| Definition of Confidential Information | Medium - Clause [x] covers broad categories of information but does not clearly address oral disclosures. The general definition point and the disclosing-party checklist point indicate a protection gap. | For the disclosing party, add oral and visual disclosures and require written confirmation within a defined period. |
-| Drafting Consistency | Medium - Clauses [x] and [y] use inconsistent defined terms or party names. The general drafting point indicates ambiguity that may affect the represented party's rights or obligations. | For the represented party, align the defined terms, party names, numbering, and cross-references before signing. |
+| Gizli bilginin tanımı | Orta - Madde [x] yazılı belgeleri kapsıyor ama sözlü açıklamaları açıkça düzenlemiyor. | Açıklayan taraf için sözlü ve görsel açıklamaları da ekleyin; bunların belirli bir süre içinde yazılı olarak teyit edilmesini öngörün. |
+| Cezai şart | Yüksek - Madde [x], her ihlal için [tutar] cezai şart ve ayrıca tüm zararların tazminini öngörüyor; TBK md. 179 uyarınca bunun ifa ile ilişkisi belirsiz. | Alan taraf için cezai şartı makul bir tutarla sınırlayın ve cezai şartın ödenmesinin ayrıca tazminat isteme hakkını ortadan kaldırıp kaldırmadığını açıkça yazın. |
 
-## Review Checklist
+## İnceleme Kontrol Listesi
 
-Use this checklist as guidance for what to review and flag. It is not the result-table template and should not be reproduced verbatim. For each checklist issue, consider both the **General** column and the party-specific column for the represented party (Disclosing Party or Receiving Party).
+Her konu için **Genel** sütunundaki noktaları her zaman, taraf sütunlarından yalnızca temsil edilen tarafınkini uygula.
 
-| Issue | General | Disclosing Party | Receiving Party |
+| Konu | Genel | Bilgiyi açıklayan taraf | Bilgiyi alan taraf |
 | --- | --- | --- | --- |
-| Parties | Identify each party and their role. Confirm whether the NDA is mutual or one-way and that obligations are correctly allocated. Flag missing affiliates, mismatched roles, or obligations inconsistent with the agreed structure. | | |
-| Purpose | Summarize the permitted purpose for which confidential information may be used. | Flag overly broad purpose language that permits use beyond the intended transaction. | Flag unclear or narrow purpose that prevents legitimate use of information in connection with the transaction. |
-| Definition of Confidential Information | Explain what information is protected, including oral, visual, derived, or pre-existing information. | Flag definitions too narrow to protect all disclosed information, or no protection for oral or unmarked information. | Flag definitions overbroad, capturing publicly available information or information not actually sensitive. |
-| Exclusions | Identify standard exclusions such as public domain, independently developed, already known, or third-party received information. | Flag missing standard exclusions that would allow the receiving party to escape obligations too easily. | Flag missing standard exclusions (public domain, independently developed, already known) or exclusions that are too difficult to prove. |
-| Disclosure Obligations | Summarize confidentiality obligations, standard of care, and use or disclosure restrictions. | Flag standards of care too weak to adequately protect the information. | Flag strict liability, vague standards, or obligations higher than own-information standards that expose the receiving party disproportionately. |
-| Permitted Recipients | Identify who may receive confidential information, including affiliates, representatives, advisers, financing sources, or investors. | Flag recipient categories too broad, or no requirement for recipients to be bound by equivalent obligations. | Flag missing adviser, affiliate, or financing source access rights needed to evaluate the transaction. |
-| Recipient Liability | State whether the receiving party is responsible for breaches by permitted recipients. | Flag absence of receiving party responsibility for breaches by permitted recipients. | Flag uncapped liability for actions of recipients outside the party's direct control. |
-| Compelled Disclosure | Summarize disclosure required by law, regulation, court order, stock exchange, or governmental authority. | Flag no notice right, no cooperation obligation, or overly broad compelled disclosure permissions. | Flag overly burdensome notice requirements or obligations to resist disclosure beyond what is practicable. |
-| Term | State the agreement term and the duration of confidentiality obligations. | Flag obligations that expire too soon or unclear continuation of obligations after agreement end. | Flag indefinite obligations or unusually long terms for non-trade-secret information. |
-| Return or Destruction | Summarize return, destruction, retention, and archival copy obligations. | Flag no return obligation or inadequate destruction mechanics. | Flag no carve-out for archival, compliance, backup, or legal retention copies. |
-| Residual Knowledge | Identify whether unaided memory or residual knowledge may be used. | Flag broad residual knowledge rights that could undermine confidentiality protections. | Flag absence of a residual knowledge carve-out that prevents legitimate use of unaided memory. |
-| Non-Solicit / Standstill | Identify non-solicitation, non-circumvention, standstill, exclusivity, or similar restrictions. | Flag absence of non-solicitation or standstill protections where commercially expected. | Flag hidden restrictive covenants, long durations, broad covered persons, or restrictions unrelated to confidentiality. |
-| No Warranty / No Obligation | Summarize disclaimers about accuracy, completeness, warranties, or obligation to proceed. | Flag missing disclaimers that could create liability for the accuracy or completeness of disclosed information. | Flag disclaimers that conflict with fraud or intentional misrepresentation, or that expressly exclude reliance. |
-| Remedies | Identify injunctive relief, equitable remedies, indemnities, liquidated damages, or enforcement provisions. | Flag absence of injunctive relief or inadequate remedies for breach. | Flag automatic injunction language, broad indemnities, or liquidated damages without adequate safeguards. |
-| Assignment | Summarize restrictions on assignment or transfer. | Flag free assignment rights that could transfer obligations to unknown parties. | Flag restrictions that block legitimate affiliate transfers needed for the deal process. |
-| Governing Law and Dispute Resolution | State governing law, forum, arbitration provisions, and submission to jurisdiction. Flag unfamiliar law, asymmetric process, inconvenient forum, or missing service provisions. | | |
+| Taraflar | Her tarafı ve sıfatını belirle. Sözleşmenin karşılıklı mı tek taraflı mı olduğunu ve yükümlülüklerin doğru dağıtıldığını teyit et. |  |  |
+| Amaç | Gizli bilginin hangi amaçla kullanılabileceğini özetle. | Amacın, işlem dışında kullanıma izin verecek kadar geniş olmasını işaretle. | Amacın, işlemle ilgili meşru kullanımı engelleyecek kadar dar ya da belirsiz olmasını işaretle. |
+| Gizli bilginin tanımı | Korunan bilgiyi açıkla: sözlü, görsel, türetilmiş ve önceden paylaşılmış bilgi dahil mi. | Sözlü ya da işaretlenmemiş bilgiyi kapsamayan dar tanımları işaretle. | Kamuya açık ya da gerçekte hassas olmayan bilgiyi de yakalayan aşırı geniş tanımları işaretle. |
+| İstisnalar | Kamuya açık, bağımsız geliştirilen, önceden bilinen ve üçüncü kişiden kısıtlamasız alınan bilgi istisnalarını belirle. | Alan tarafın yükümlülükten kolayca kurtulmasına yol açan istisnaları işaretle. | Eksik standart istisnaları ya da ispatı çok zor istisnaları işaretle. |
+| Gizlilik yükümlülükleri | Gizlilik yükümlülüklerini, özen ölçüsünü ve kullanma ve açıklama yasaklarını özetle. | Bilgiyi yeterince korumayan zayıf özen ölçüsünü işaretle. | Kusursuz sorumluluk, belirsiz özen ölçüsü ya da kendi bilgisine gösterdiğinden yüksek özen yükümlülüğünü işaretle. |
+| Bilgiye erişebilecek kişiler | Çalışanlar, bağlı şirketler, danışmanlar ve finansman sağlayanlar gibi bilgiyi alabilecek kişileri belirle. | Fazla geniş alıcı kategorilerini ya da alıcıların eşdeğer yükümlülükle bağlanmamasını işaretle. | İşlemin değerlendirilmesi için gereken danışman, bağlı şirket ya da finansman sağlayan erişiminin eksikliğini işaretle. |
+| Alıcıların ihlalinden sorumluluk | Alan tarafın, bilgiyi paylaştığı kişilerin ihlalinden sorumlu olup olmadığını belirt (TBK md. 116 yardımcı kişilerin fiillerinden sorumluluk). | Bu sorumluluğun bulunmamasını işaretle. | Doğrudan kontrolü dışındaki kişiler için sınırsız sorumluluğu işaretle. |
+| Zorunlu açıklama | Kanun, mahkeme kararı ya da düzenleyici kurum (ör. SPK, KVKK Kurulu) gereği açıklamayı özetle. | Bildirim hakkı ya da işbirliği yükümlülüğü olmamasını işaretle. | Uygulanamayacak kadar ağır bildirim ya da direnme yükümlülüklerini işaretle. |
+| Süre | Sözleşmenin süresini ve gizlilik yükümlülüklerinin ne kadar devam ettiğini belirt. | Yükümlülüklerin erken sona ermesini ya da sözleşme bitiminden sonra devamının belirsizliğini işaretle. | Ticari sır niteliği taşımayan bilgi için süresiz ya da olağandışı uzun süreleri işaretle. |
+| İade ve imha | İade, imha, saklama ve arşiv kopyası yükümlülüklerini özetle; kişisel veri içeren bilgide KVKK md. 7 silme ve yok etme yükümlülüğünü de dikkate al. | İade yükümlülüğünün olmamasını ya da imha usulünün yetersizliğini işaretle. | Arşiv, uyum, yedekleme ya da yasal saklama kopyaları için istisna olmamasını işaretle. |
+| Cezai şart ve tazminat | Cezai şart, tazminat ve ihtiyati tedbir gibi hukuki çareleri belirle. Cezai şartın TBK md. 179-182 kapsamında ifa ile ilişkisini ve hâkimin indirim yetkisini değerlendir; tacirler arasında indirim yasağını (TTK md. 22) dikkate al. | Etkili bir cezai şart ya da tedbir imkânı olmamasını işaretle. | Aşırı yüksek cezai şartı, ceza ile birlikte ayrıca tazminat istenebilmesini ve otomatik tedbir ifadelerini işaretle. |
+| Devir | Sözleşmenin devrine ilişkin kısıtlamaları özetle. | Yükümlülüklerin bilinmeyen kişilere devrine imkân veren serbest devri işaretle. | İşlem süreci için gereken bağlı şirket devirlerini engelleyen kısıtlamaları işaretle. |
+| Uygulanacak hukuk ve uyuşmazlık çözümü | Uygulanacak hukuku, yetkili mahkemeyi ya da tahkimi belirt. Yetki sözleşmesinin HMK md. 17, tahkim şartının HMK md. 412 şartlarını karşıladığını kontrol et. |  |  |
 
-Deliver the review inline in your chat response. Do not generate a downloadable Word document unless the user explicitly asks for one.
+İncelemeyi sohbette, satır içinde ver. Kullanıcı açıkça istemedikçe indirilebilir bir Word belgesi oluşturma.
+
+## Türk hukuku
+
+- Belgeyi Türk hukukuna göre değerlendir. Uygulanacak hukuk başka bir ülkenin hukukuysa bunu belirt ve Türk hukukuna göre yaptığın tespitleri bununla sınırlı tut.
+- Bir değerlendirme kanun hükmüne dayanıyorsa ilgili maddeyi mevzuat arama aracıyla bul, oku ve atıf yap (ör. "TBK md. 27"). Madde numarasını hafızadan yazma.
+- Yerleşik içtihat sonucu değiştirebilecekse içtihat arama aracıyla Yargıtay kararlarını bul; dayanmadan önce kararı oku ve künyeyi sonuçtan aktar.
+- Veritabanında olmayan bir mevzuat gerekiyorsa (ör. İş Kanunu, İcra ve İflas Kanunu, MÖHUK) bunu açıkça söyle ve o kısmı doğrulanmamış olarak işaretle.

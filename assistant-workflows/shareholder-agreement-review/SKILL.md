@@ -1,64 +1,70 @@
 ---
 name: "shareholder-agreement-review"
-description: "Review the uploaded shareholder agreement and produce a comprehensive table-based legal review from the perspective of the party represented by the user/client."
+description: "Yüklenen pay sahipleri sözleşmesini, kullanıcının temsil ettiği pay sahibinin bakış açısından tabloya dayalı olarak inceler."
 license: "MIT"
 metadata:
-  version: "1.0.0"
-  author: "Open Legal Products"
-  language: "English"
-  mike-display-name: "Shareholder Agreement Review"
+  version: "1.0.0-tr.1"
+  author: "Open Legal Products; Türkçe uyarlama: mikeTR"
+  language: "Turkish"
+  mike-display-name: "Pay Sahipleri Sözleşmesi İncelemesi"
   mike-type: "assistant"
   mike-availability: "system"
-  practice: "Corporate"
-  jurisdictions: "General"
+  practice: "Şirketler Hukuku"
+  jurisdictions: "Türkiye"
 ---
-# Shareholder Agreement Review
 
-## Instructions
+# Pay Sahipleri Sözleşmesi İncelemesi
 
-Review the uploaded shareholder agreement and produce a comprehensive table-based legal review from the perspective of the party represented by the user/client. If the user has not already identified which party they represent, ask them to clarify that party before producing the review.
+## Talimatlar
 
-Once the represented party is clear, provide exactly one Markdown result table. Use one row for each material issue found in the agreement, guided by the review checklist below, and add a final row called **Overall Risk Rating**. The result table must have exactly these columns:
+Yüklenen pay sahipleri sözleşmesini incele ve kullanıcının (müvekkilin) temsil ettiği tarafın bakış açısından tabloya dayalı kapsamlı bir hukuki inceleme hazırla. Kullanıcı hangi tarafı (çoğunluk pay sahibi ya da azınlık pay sahibi) temsil ettiğini belirtmediyse incelemeye başlamadan önce bunu sor.
 
-- Issue
-- Summary
-- Recommended Change
+Temsil edilen taraf belli olduğunda tam olarak bir Markdown sonuç tablosu ver. Aşağıdaki kontrol listesine dayanarak sözleşmede bulduğun her önemli sorun için bir satır kullan ve en sona **Genel Risk Değerlendirmesi** başlıklı bir satır ekle. Tablo tam olarak şu sütunlardan oluşmalıdır:
 
-Use these risk ratings inside the **Summary** column: Low means standard or minimal concern; Medium means a manageable negotiation concern; High means a material legal, commercial, operational, or enforceability concern requiring negotiation; Critical means a severe issue that may block signing unless resolved. Start each summary with the risk rating, e.g. "High — drag threshold is too low".
+- Sorun
+- Özet
+- Önerilen Değişiklik
 
-The **Summary** column should include only the relevant points from the **General** checklist column and the party-specific checklist column for the represented party, together with clause references where available. Do not include issues that are adverse only to the other party unless they also create risk for the represented party. The **Recommended Change** column must be drafted from the represented party's perspective. Also flag general drafting errors that may affect the represented party, including inconsistent defined terms, inconsistent entity names, cross-reference errors, numbering issues, duplicated provisions, missing schedules, and internal inconsistencies. Keep the response concise and avoid long prose outside the table.
+**Özet** sütununa şu risk derecelerinden biriyle başla: Düşük, olağan ya da önemsiz bir endişedir; Orta, yönetilebilir bir müzakere konusudur; Yüksek, müzakere gerektiren önemli bir hukuki, ticari, operasyonel ya da geçerlilik sorunudur; Kritik, çözülmezse imzayı engelleyebilecek ciddi bir sorundur. Örnek: "Yüksek - rekabet yasağının süresi ve yer sınırı belirsiz".
 
-## Result Table Format
+**Özet** sütununa yalnızca kontrol listesinin **Genel** sütunundan ve temsil edilen tarafın sütunundan ilgili noktaları, mümkün olduğunda madde atıflarıyla yaz. Yalnızca karşı tarafın aleyhine olan ve temsil edilen taraf için risk yaratmayan noktaları ekleme. **Önerilen Değişiklik** sütununu temsil edilen tarafın bakış açısından yaz. Temsil edilen tarafı etkileyebilecek genel yazım hatalarını da işaretle: tutarsız tanımlar ve unvanlar, atıf ve numaralandırma hataları, tekrarlanan hükümler, eksik ekler ve iç çelişkiler. Yanıtı kısa tut; tablo dışında uzun düz yazıdan kaçın.
 
-Use this result table structure. Cite the relevant clause, section, schedule, or page directly in the **Summary** and **Recommended Change** columns. The example rows are illustrative only; tailor the actual rows to the uploaded agreement and represented party.
+Bir sorun kanunun emredici bir hükmüne, kesin hükümsüzlüğe ya da genel işlem koşulları denetimine dayanıyorsa dayanak maddeyi atıfla göster ve maddeyi mevzuat arama aracıyla kontrol et.
 
-| Issue | Summary | Recommended Change |
+## Sonuç Tablosu Biçimi
+
+Bu tablo yapısını kullan. İlgili madde, bent, ek ya da sayfayı doğrudan **Özet** ve **Önerilen Değişiklik** sütunlarında belirt. Örnek satırlar yalnızca açıklama içindir; gerçek satırları yüklenen sözleşmeye ve temsil edilen tarafa göre hazırla.
+
+| Sorun | Özet | Önerilen Değişiklik |
 | --- | --- | --- |
-| Drag-Along Rights | High — Clause [x] sets the drag threshold at [x]% and does not include a minimum price protection. The minority-specific checklist point indicates the minority can be forced to sell at an unfavorable price. | For the minority, raise the drag threshold, add a minimum price equal to fair market value, and limit warranties to proceeds received. |
-| Drafting Consistency | Medium — Clauses [x] and [y] use inconsistent defined terms for the share classes. The general drafting point indicates ambiguity that may affect the represented party's rights. | For the represented party, align defined terms, share class definitions, and cross-references before signing. |
+| Esas sözleşme ile uyum | Yüksek - Madde [x] azınlığa yönetim kurulunda bir üye seçme hakkı tanıyor ama bu hak esas sözleşmeye işlenmemiş; şirkete ve genel kurula karşı ileri sürülemeyebilir. | Azınlık pay sahibi için hakkın imtiyazlı pay ya da esas sözleşme değişikliğiyle güvenceye alınmasını ve bunun kapanış koşulu yapılmasını isteyin. |
+| Satmaya zorlama | Yüksek - Madde [x] çoğunluğun asgari bir fiyat güvencesi olmadan azınlığı satışa zorlamasına izin veriyor. | Azınlık pay sahibi için satmaya zorlamayı bağımsız değerleme ile belirlenen adil değerin altında olmayan ve aynı koşullarla yapılan satışlarla sınırlayın. |
 
-## Review Checklist
+## İnceleme Kontrol Listesi
 
-Use this checklist as guidance for what to review and flag. It is not the result-table template and should not be reproduced verbatim. For each checklist issue, consider both the **General** column and the party-specific column for the represented party (Majority or Minority).
+Her konu için **Genel** sütunundaki noktaları her zaman, taraf sütunlarından yalnızca temsil edilen tarafınkini uygula.
 
-| Issue | General | Majority | Minority |
+| Konu | Genel | Çoğunluk pay sahibi | Azınlık pay sahibi |
 | --- | --- | --- | --- |
-| Parties and Shareholdings | Identify each shareholder, role, share class, percentage holding, and fully diluted position. Flag inconsistent cap table information, missing parties, or unclear beneficial ownership. | | |
-| Share Classes and Rights | Summarize voting rights, dividend rights, liquidation preferences, conversion rights, redemption rights, and class consents. | Flag class consents or voting requirements that effectively give minority approval rights over ordinary decisions. | Flag hidden preference rights, disproportionate majority voting rights, or unfavorable class economics. |
-| Board Composition and Governance | Identify board size, appointment rights, observer rights, quorum, chair, and casting vote. | Flag quorum or deadlock provisions giving minority an effective veto over governance. | Flag entrenched majority appointment rights, casting vote held by a majority nominee, or no observer rights for minority. |
-| Reserved Matters | List matters requiring special majority, unanimity, investor consent, or board consent. | Flag reserved matters requiring minority consent that constrain ordinary business decisions. | Flag absence of meaningful minority veto rights or low-dollar thresholds allowing majority to structure around them. |
-| Pre-emption on New Shares | Summarize pre-emption rights, offer process, timing, exclusions, and carve-outs. | Flag mechanics slowing fundraising or requiring minority consent to issue new shares. | Flag broad carve-outs, short exercise periods, or mechanics permitting dilution without proper notice. |
-| Transfer Restrictions | Summarize lock-ups, prohibited transfers, permitted transfers, and consent requirements. | Flag restrictions preventing majority exit or group reorganisation without minority consent. | Flag absence of lock-up on majority transfers or mechanics allowing majority to exit leaving minority trapped. |
-| Right of First Refusal / Pre-emption on Transfer | Identify trigger, process, pricing, matching rights, and exceptions. | Flag long ROFR processes or pricing mechanics delaying majority exit. | Flag unclear matching rights, long processes excluding minority participation, or exceptions removing minority protections. |
-| Drag-Along Rights | Identify drag threshold, sale conditions, minority protections, and power of attorney. | Flag high drag threshold or conditions preventing majority from executing a sale. | Flag low drag threshold, no minimum price protection, forced warranties beyond proceeds received, or broad power of attorney. |
-| Tag-Along Rights | Identify triggering transfers, eligible holders, and sale terms. | Flag broad tag triggers complicating majority exit. | Flag missing or narrow tag rights, or mechanics allowing majority to exclude minority from exit proceeds. |
-| Anti-Dilution Protections | Identify anti-dilution mechanics, carve-outs, and adjustment triggers. | Flag mechanics punishing founders or majority holders on down-rounds. | Flag absence of anti-dilution protection, full ratchet terms, or unclear carve-outs from adjustment. |
-| Dividend Policy | Summarize dividend rights, preferential dividends, restrictions, and discretion. | Flag mandatory dividend obligations impairing business cash flow or restricting majority discretion. | Flag unclear preferential dividend rights or majority discretion over dividends without minority consent. |
-| Exit and Liquidity | Identify IPO, trade sale, redemption, put/call rights, timelines, and liquidation preferences. | Flag forced exit timelines or investor put rights constraining majority exit strategy. | Flag unclear waterfall on exit, exit rights not applying equally, or no minority participation in liquidity events. |
-| Deadlock | Summarize deadlock definition, escalation, expert determination, shoot-out, and liquidation mechanics. | Flag deadlock provisions giving minority disproportionate leverage or effective veto. | Flag shoot-out rights triggered at low thresholds or mechanics structurally favoring majority. |
-| Non-Compete and Non-Solicitation | Identify who is bound, restricted activities, geography, duration, and carve-outs. | Flag restraints binding the majority entity or overly broad scope applied to the majority group. | Flag broad non-competes restricting the minority's ability to operate independently after exit. |
-| Information Rights | Identify reporting, inspection, management accounts, and confidentiality obligations. | Flag extensive information rights giving minority commercially sensitive operational visibility. | Flag absence of reporting or inspection rights, or inadequate confidentiality obligations on recipients. |
-| Related Party Transactions | Identify approval requirements, disclosure duties, and arm's-length standards. | Flag overly strict conflict controls restricting legitimate majority-group transactions. | Flag weak conflict controls, broad permitted related-party dealings, or no arm's-length enforcement. |
-| Governing Law and Dispute Resolution | State governing law, forum, arbitration, escalation, and interim relief rights. Flag unclear or ambiguous forum or dispute mechanics. | | |
+| Taraflar ve şirket | Pay sahiplerini, pay oranlarını, şirketin türünü (A.Ş. ya da Ltd. Şti.) ve sözleşmenin şirketi de bağlayıp bağlamadığını belirle. |  |  |
+| Esas sözleşme ile ilişki | Pay sahipleri sözleşmesinin yalnızca taraflar arasında borç doğurduğunu, esas sözleşmeye işlenmeyen hükümlerin şirkete ve üçüncü kişilere karşı ileri sürülemeyeceğini değerlendir. A.Ş. esas sözleşmesi TTK'dan ancak izin verildiği ölçüde sapabilir (TTK md. 340). | Esas sözleşmeye işlenmesi gereken hükümlerin işlenmemesini işaretle. | Azınlık korumalarının yalnızca borçsal düzeyde kalmasını işaretle. |
+| Yönetim kurulu | Yönetim kurulu üyelerini aday gösterme haklarını, toplantı ve karar nisaplarını özetle. | Çoğunluğun yönetimi kontrol edememesine yol açan hükümleri işaretle. | Azınlığa yönetim kurulunda temsil hakkı tanınmamasını işaretle. |
+| Önemli kararlar ve veto | Ağırlaştırılmış nisap ya da veto gerektiren konuları belirle. | İşletmenin olağan yönetimini kilitleyecek geniş veto haklarını işaretle. | Sermaye artırımı, birleşme, esas sözleşme değişikliği ve ilişkili taraf işlemleri için veto olmamasını işaretle. |
+| Pay devri kısıtlamaları | Devir yasaklarını, önalım ve onay haklarını belirt. Nama yazılı payların devrinin esas sözleşmeyle sınırlandırılabileceğini ve şirketin önemli sebeple onaydan kaçınabileceğini dikkate al (TTK md. 490, 493). |  |  |
+| Önalım, birlikte satış ve satmaya zorlama | Önalım (ROFR/ROFO), birlikte satış (tag-along) ve satmaya zorlama (drag-along) haklarını ve fiyat belirleme usulünü özetle. | Çıkış işlemini engelleyen birlikte satış ve önalım haklarını işaretle. | Birlikte satış hakkının olmamasını ve satmaya zorlamada adil değer güvencesi olmamasını işaretle. |
+| Sermaye artırımı ve sulanma | Rüçhan haklarını ve sulanmaya karşı koruma hükümlerini belirle. | Gelecek finansmanı zorlaştıran ağır sulanma korumasını işaretle. | Rüçhan hakkının kısıtlanabilmesini ve sulanma korumasının olmamasını işaretle. |
+| Kâr payı politikası | Kâr dağıtım politikasını ve yedek akçe ayrılmasını özetle. | Bağlayıcı yüksek kâr dağıtım taahhüdünü işaretle. | Kâr dağıtımının tamamen çoğunluğun takdirine bırakılmasını işaretle. |
+| Bilgi alma ve denetim | Pay sahiplerinin bilgi alma ve inceleme haklarını belirt. | Rakip pay sahibine hassas bilgi verilmesini işaretle. | Kanuni bilgi alma hakkının ötesinde düzenli raporlama olmamasını işaretle. |
+| Rekabet yasağı ve gizlilik | Pay sahiplerinin rekabet yasağı ve gizlilik yükümlülüklerini, süre ve kapsamıyla değerlendir. | Yönetici pay sahipleri için rekabet yasağı olmamasını işaretle. | Azınlık pay sahibinin diğer yatırımlarını kısıtlayan geniş yasakları işaretle. |
+| Kilitlenme ve çıkış | Kilitlenme (deadlock) çözüm yöntemlerini, karşılıklı alım-satım (shotgun) ve halka arz gibi çıkış yollarını özetle. | Belirsiz kilitlenme çözümünü işaretle. | Azınlığın finansal gücünü dikkate almayan karşılıklı alım-satım mekanizmasını işaretle. |
+| Cezai şart ve uygulanabilirlik | Sözleşmeye aykırılık yaptırımlarını, cezai şartları ve oy anlaşmalarının uygulanabilirliğini değerlendir (TBK md. 179-182). | Etkili bir yaptırım olmamasını işaretle. | Orantısız cezai şartları işaretle. |
+| Uygulanacak hukuk ve uyuşmazlık çözümü | Uygulanacak hukuku, yetkili mahkemeyi ya da tahkimi belirt; HMK md. 412 tahkim şartını kontrol et. |  |  |
 
-Deliver the review inline in your chat response. Do not generate a downloadable Word document unless the user explicitly asks for one.
+İncelemeyi sohbette, satır içinde ver. Kullanıcı açıkça istemedikçe indirilebilir bir Word belgesi oluşturma.
+
+## Türk hukuku
+
+- Belgeyi Türk hukukuna göre değerlendir. Uygulanacak hukuk başka bir ülkenin hukukuysa bunu belirt ve Türk hukukuna göre yaptığın tespitleri bununla sınırlı tut.
+- Bir değerlendirme kanun hükmüne dayanıyorsa ilgili maddeyi mevzuat arama aracıyla bul, oku ve atıf yap (ör. "TBK md. 27"). Madde numarasını hafızadan yazma.
+- Yerleşik içtihat sonucu değiştirebilecekse içtihat arama aracıyla Yargıtay kararlarını bul; dayanmadan önce kararı oku ve künyeyi sonuçtan aktar.
+- Veritabanında olmayan bir mevzuat gerekiyorsa (ör. İş Kanunu, İcra ve İflas Kanunu, MÖHUK) bunu açıkça söyle ve o kısmı doğrulanmamış olarak işaretle.

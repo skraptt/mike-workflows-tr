@@ -1,0 +1,16 @@
+$schema: "../../workflow-schema/pack.schema.yaml"
+id: "turk-hukuku"
+title: "Türk Hukuku Paketi"
+description: "mikeTR'nin mevzuat ve içtihat araçlarını kullanan Türk hukukuna özgü iş akışları: kaynaklı hukuki araştırma notu ve ihtarname taslağı. Her iş akışı avukatın incelemesi için taslak üretir; gönderme, imzalama ve başvurma kararı avukattadır."
+publisher:
+  name: "mikeTR"
+  url: "https://github.com/skraptt/mikeTR"
+license: "MIT"
+version: "1.0.0"
+practice: "Genel"
+jurisdiction: "Türkiye"
+source:
+  repo: "https://github.com/skraptt/mike-workflows-tr"
+workflows:
+  - "hukuki-arastirma"
+  - "ihtarname-taslagi"
